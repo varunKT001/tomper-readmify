@@ -19,7 +19,7 @@ export function Home(): JSX.Element {
           lineHeight={'110%'}
         >
           Create your Profile README <br />
-          <Text as={'span'} color={'orange.500'}>
+          <Text as={'span'} color={'orange.400'}>
             using the best Templates
           </Text>
         </Heading>

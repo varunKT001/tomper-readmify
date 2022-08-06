@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '../redux';
 import ReactMarkdown from 'react-markdown';
+import ChakraUIRenderer from 'chakra-ui-markdown-renderer';
 
 export function ReadmePreview(): JSX.Element {
   const { templateString } = useSelector((store: RootState) => store.template);
@@ -15,5 +16,7 @@ export function ReadmePreview(): JSX.Element {
     setMarkdown(md);
   }, [templateString]);
 
-  return <ReactMarkdown>{markdown}</ReactMarkdown>;
+  return (
+    <ReactMarkdown components={ChakraUIRenderer()}>{markdown}</ReactMarkdown>
+  );
 }

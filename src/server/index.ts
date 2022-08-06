@@ -3,10 +3,13 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 import express, { Request, Response } from 'express';
-import path from 'path';
 import { AppRouter, ErrorMiddleware } from '@varuntiwari/express-ts-decorators';
+import cors from 'cors';
+import path from 'path';
 
 const app = express();
+
+import './controllers/templateController';
 
 process.on('uncaughtException', (err: Error) => {
   console.log(`Error: ${err.message}`);
@@ -21,6 +24,8 @@ process.on('unhandledRejection', (err: Error) => {
     process.exit(1);
   });
 });
+
+app.use(cors());
 
 app.use(express.json());
 

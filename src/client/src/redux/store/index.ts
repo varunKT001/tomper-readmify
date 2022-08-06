@@ -1,9 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { templateReducer } from '../template';
-import { StoreState } from './types';
+import { useDispatch } from 'react-redux';
 
-export const store = configureStore<StoreState>({
+export const store = configureStore({
   reducer: {
     template: templateReducer,
   },
 });
+
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
+export const useAppDispatch: () => AppDispatch = useDispatch;

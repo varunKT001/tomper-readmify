@@ -4,12 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "installScripts:client": "npm install --prefix src/client",
+    "installScripts:server": "npm install --prefix src/server",
     "dev:server": "npm run dev --prefix src/server",
     "dev:client": "npm run dev --prefix src/client",
     "dev": "npm-run-all -n -l -p dev:*",
-    "build:client": "npm run build --prefix src/client",
     "build:server": "npm run build --prefix src/server",
+    "build:client": "npm run build --prefix src/client",
     "build": "npm-run-all -n -l -p build:*",
+    "heroku-postbuild": "npm run installScripts:client && npm run installScripts:server",
     "start": "npm start --prefix src/server"
   },
   "keywords": [],

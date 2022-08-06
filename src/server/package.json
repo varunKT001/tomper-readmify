@@ -1,0 +1,26 @@
+{
+  "name": "readme-generator",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev:build": "tsc -w",
+    "dev:run": "nodemon build/index.js",
+    "dev": "npm-run-all -n -l -p dev:*"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@types/express": "^4.17.13",
+    "@varuntiwari/express-ts-decorators": "^1.0.13",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "npm-run-all": "^4.1.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19",
+    "typescript": "^4.7.4"
+  }
+}

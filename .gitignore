@@ -1,0 +1,9 @@
+# node_modules
+node_modules
+
+# build
+/src/server/build
+/src/client/dist
+
+# secrets
+.env

@@ -12,7 +12,7 @@
     "build:server": "npm run build --prefix src/server",
     "build:client": "npm run build --prefix src/client",
     "build": "npm-run-all -n -l -p build:*",
-    "heroku-postbuild": "npm run installScripts:client && npm run installScripts:server && npm run build:server && npm run build:client",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run installScripts:client && npm run installScripts:server && npm run build:server && npm run build:client",
     "start": "npm start --prefix src/server"
   },
   "keywords": [],

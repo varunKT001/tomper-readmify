@@ -6,13 +6,14 @@
   "scripts": {
     "installScripts:client": "npm install --prefix src/client",
     "installScripts:server": "npm install --prefix src/server",
+    "installScripts": "npm-run-all -n -l -p installScripts:*",
     "dev:server": "npm run dev --prefix src/server",
     "dev:client": "npm run dev --prefix src/client",
     "dev": "npm-run-all -n -l -p dev:*",
     "build:server": "npm run build --prefix src/server",
     "build:client": "npm run build --prefix src/client",
     "build": "npm-run-all -n -l -p build:*",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run installScripts:client && npm run installScripts:server && npm run build:server && npm run build:client",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run installScripts && npm run build",
     "start": "npm start --prefix src/server"
   },
   "keywords": [],

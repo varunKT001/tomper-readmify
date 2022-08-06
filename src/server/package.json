@@ -7,6 +7,7 @@
     "dev:run": "nodemon build/index.js",
     "dev": "npm-run-all -n -l -p dev:*",
     "build": "tsc",
+    "postinstall": "tsc",
     "start": "node build/index.js"
   },
   "keywords": [],

@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
     "dev:build": "tsc -w",
     "dev:run": "nodemon build/index.js",
-    "dev": "npm-run-all -n -l -p dev:*"
+    "dev": "npm-run-all -n -l -p dev:*",
+    "build": "tsc",
+    "start": "node build/index.js"
   },
   "keywords": [],
   "author": "",

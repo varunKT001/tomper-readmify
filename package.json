@@ -6,7 +6,11 @@
   "scripts": {
     "dev:server": "npm run dev --prefix src/server",
     "dev:client": "npm run dev --prefix src/client",
-    "dev": "npm-run-all -n -l -p dev:*"
+    "dev": "npm-run-all -n -l -p dev:*",
+    "build:client": "npm run build --prefix src/client",
+    "build:server": "npm run build --prefix src/server",
+    "build": "npm-run-all -n -l -p build:*",
+    "start": "npm start --prefix src/server"
   },
   "keywords": [],
   "author": "",

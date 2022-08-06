@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Home, CreateReadme } from './pages';
 import { SharedLayout } from './pages/SharedLayout';
 
-export function App() {
+export function App(): JSX.Element {
   return (
     <Router>
       <Routes>

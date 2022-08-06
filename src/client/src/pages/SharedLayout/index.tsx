@@ -2,7 +2,7 @@ import { Box, Flex, Image, Link as ChakraLink } from '@chakra-ui/react';
 import { Outlet, Link } from 'react-router-dom';
 import logo from '../../assets/logo.svg';
 
-export function SharedLayout() {
+export function SharedLayout(): JSX.Element {
   return (
     <Box m={'25px'}>
       <Flex alignItems={'center'} justifyContent={'space-between'} mb={'25px'}>

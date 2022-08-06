@@ -1,7 +1,7 @@
 import { Box, Container, Heading, Stack, Text, Button } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 
-export function Home() {
+export function Home(): JSX.Element {
   return (
     <Container maxW={'4xl'}>
       <Stack

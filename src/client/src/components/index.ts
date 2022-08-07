@@ -1,3 +1,3 @@
 export * from './ReadmeForm';
-export * from './ReadmeShow';
+export * from './ReadmePreview';
 export * from './ThemeSelector';

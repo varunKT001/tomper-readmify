@@ -5,7 +5,7 @@ import ReactMarkdown from 'react-markdown';
 import ChakraUIRenderer from 'chakra-ui-markdown-renderer';
 import { Box, Text, VStack } from '@chakra-ui/react';
 
-export function ReadmeShow(): JSX.Element {
+export function ReadmePreview(): JSX.Element {
   const { templateString } = useSelector((store: RootState) => store.template);
 
   const [markdown, setMarkdown] = useState<string>('');

@@ -1,5 +1,5 @@
 import { Stack, Box } from '@chakra-ui/react';
-import { ReadmeForm, ReadmePreview } from '../../components';
+import { ReadmeForm, ReadmeShow } from '../../components';
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { fetchTemplateInfo, RootState } from '../../redux';
@@ -26,7 +26,7 @@ export function CreateReadme(): JSX.Element {
         <ReadmeForm />
       </Box>
       <Box w={{ base: '100%', md: '60%' }} h={{ base: '', md: '100%' }}>
-        <ReadmePreview />
+        <ReadmeShow />
       </Box>
     </Stack>
   );

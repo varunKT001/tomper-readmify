@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../redux';
 import ReactMarkdown from 'react-markdown';
 import ChakraUIRenderer from 'chakra-ui-markdown-renderer';
+import { Box, Text, VStack } from '@chakra-ui/react';
 
 export function ReadmePreview(): JSX.Element {
   const { templateString } = useSelector((store: RootState) => store.template);
@@ -17,6 +18,13 @@ export function ReadmePreview(): JSX.Element {
   }, [templateString]);
 
   return (
-    <ReactMarkdown components={ChakraUIRenderer()}>{markdown}</ReactMarkdown>
+    <VStack alignItems={'flex-start'} w={'100%'} h={'100%'}>
+      <Text>Preview:</Text>
+      <Box p={2} borderWidth={2} borderRadius={'md'} w={'100%'} h={'100%'}>
+        <ReactMarkdown components={ChakraUIRenderer()}>
+          {markdown}
+        </ReactMarkdown>
+      </Box>
+    </VStack>
   );
 }

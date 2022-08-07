@@ -1,4 +1,4 @@
-import { SimpleGrid } from '@chakra-ui/react';
+import { Stack, Box } from '@chakra-ui/react';
 import { CreateReadmeForm, ReadmePreview } from '../../components';
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
@@ -16,9 +16,18 @@ export function CreateReadme(): JSX.Element {
   }, [templateName]);
 
   return (
-    <SimpleGrid columns={2} spacing={2}>
-      <CreateReadmeForm />
-      <ReadmePreview />
-    </SimpleGrid>
+    <Stack
+      h={'100%'}
+      mx={'25px'}
+      spacing={{ base: 4, md: 10 }}
+      direction={{ base: 'column', md: 'row' }}
+    >
+      <Box w={{ base: '100%', md: '40%' }} h={{ base: '', md: '100%' }}>
+        <CreateReadmeForm />
+      </Box>
+      <Box w={{ base: '100%', md: '60%' }} h={{ base: '', md: '100%' }}>
+        <ReadmePreview />
+      </Box>
+    </Stack>
   );
 }

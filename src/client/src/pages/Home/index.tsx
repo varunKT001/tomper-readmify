@@ -7,8 +7,8 @@ export function Home(): JSX.Element {
       <Stack
         as={Box}
         alignItems={'center'}
-        spacing={{ base: 8, md: 14 }}
-        py={{ base: 20, md: 36 }}
+        spacing={{ base: 8, md: 12 }}
+        py={{ base: 20, md: 32 }}
       >
         <Heading
           className='hero'

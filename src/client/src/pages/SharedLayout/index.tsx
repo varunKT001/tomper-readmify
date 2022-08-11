@@ -1,11 +1,23 @@
-import { Image, Link as ChakraLink, HStack, Flex, Box } from '@chakra-ui/react';
+import {
+  Image,
+  Link as ChakraLink,
+  HStack,
+  Flex,
+  Box,
+  Text,
+} from '@chakra-ui/react';
 import { Outlet, Link, useLocation } from 'react-router-dom';
-import logo from '../../assets/logo.svg';
+import { AiFillStar } from 'react-icons/ai';
 import { ThemeSelector } from '../../components';
-import { GithubNameModal } from '../../components/GithubNameModal';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../redux';
+
+import { GithubNameModal } from '../../components';
+import logo from '../../assets/logo.svg';
 
 export function SharedLayout(): JSX.Element {
   const { pathname } = useLocation();
+  const { acceptedFields } = useSelector((store: RootState) => store.template);
 
   return (
     <Flex direction={'column'} alignItems={'flex-start'} h={'100vh'}>
@@ -15,24 +27,32 @@ export function SharedLayout(): JSX.Element {
           alignItems={'center'}
           justifyContent={'space-between'}
         >
-          <HStack spacing={4} alignItems={'center'} justifyContent={'center'}>
+          <HStack spacing={4}>
             <Link to='/'>
-              <Image src={logo} boxSize={{ base: '34px', md: '44px' }} />
+              <Box boxSize={{ base: '34px', md: '44px' }}>
+                <Image src={logo} />
+              </Box>
             </Link>
             {pathname === '/create' && <ThemeSelector />}
-            {pathname === '/create' && <GithubNameModal />}
+            {pathname === '/create' &&
+              acceptedFields.includes('githubUsername') && <GithubNameModal />}
           </HStack>
           <ChakraLink
             px={{ base: '15px', md: '25px' }}
             py={{ base: '5px', md: '10px' }}
             fontSize={{ base: 'sm', md: 'md' }}
+            display={'flex'}
+            flexDir={'row'}
+            alignItems={'center'}
+            justifyContent={'center'}
             borderRadius={'md'}
             color={'white'}
             bgColor={'black'}
             isExternal
-            href='https://chakra-ui.com'
+            href='https://github.com/varunKT001/tomper-readme-generator'
           >
-            Github
+            <AiFillStar />
+            <Text ml={2}>Github</Text>
           </ChakraLink>
         </HStack>
       </Box>

@@ -1,5 +1,3 @@
-import { AxiosError } from 'axios';
-
 export interface TemplateState {
   templateName: string;
   templateString: string;
@@ -12,5 +10,6 @@ export interface ChangePayload {
 }
 
 export interface FailedResponse {
+  success: boolean;
   message: string;
 }

@@ -1,13 +1,14 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { TemplateState, FailedResponse } from './types';
+import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { TemplateState, FailedResponse, ChangePayload } from './types';
 import { customFetch } from '../../config/axios';
 import { Toast } from '../../config/toast';
+import { AxiosError } from 'axios';
 
-const initialState: TemplateState = {
+const initialState = {
   templateName: 'simple',
   templateString: '',
   acceptedFields: [],
-};
+} as TemplateState;
 
 export const fetchTemplateInfo = createAsyncThunk<
   TemplateState,
@@ -18,14 +19,20 @@ export const fetchTemplateInfo = createAsyncThunk<
     const res = await customFetch(`/template?name=${name}`);
     return res.data;
   } catch (error) {
-    return thunkAPI.rejectWithValue({ message: 'Something went wrong' });
+    const err = error as AxiosError<FailedResponse>;
+    return thunkAPI.rejectWithValue(err.response?.data as FailedResponse);
   }
 });
 
 const templateSlice = createSlice({
   name: 'templateSlice',
   initialState,
-  reducers: {},
+  reducers: {
+    change: (state: TemplateState, action: PayloadAction<ChangePayload>) => {
+      const { name, value } = action.payload;
+      state[name] = value as string & string[];
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(fetchTemplateInfo.fulfilled, (state, action) => {
       state.templateString = action.payload.templateString;
@@ -37,4 +44,5 @@ const templateSlice = createSlice({
   },
 });
 
+export const { change } = templateSlice.actions;
 export const templateReducer = templateSlice.reducer;

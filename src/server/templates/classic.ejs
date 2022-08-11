@@ -1,0 +1,7 @@
+# 👋 Hi, I am <%= typeof fullName === 'string' && fullName %>
+
+## About Me 😀
+
+<% for(let field of fields) { %> 
+<%= `- ${typeof field.emoji === 'string' && field.emoji} I do ___${typeof field.name === 'string' && field.name.charAt(0).toUpperCase() + field.name.slice(1)}___` %>
+<% } %>

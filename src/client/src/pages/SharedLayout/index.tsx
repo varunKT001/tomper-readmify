@@ -14,7 +14,7 @@ export function SharedLayout(): JSX.Element {
           alignItems={'center'}
           justifyContent={'space-between'}
         >
-          <HStack spacing={4}>
+          <HStack spacing={4} alignItems={'center'} justifyContent={'center'}>
             <Link to='/'>
               <Image src={logo} boxSize={{ base: '34px', md: '44px' }} />
             </Link>

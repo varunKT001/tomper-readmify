@@ -6,4 +6,7 @@ export const templatesInfo: TemplatesInfo = {
   simple: {
     acceptedFields: ['fullName'],
   },
+  classic: {
+    acceptedFields: ['fullName', 'fields'],
+  },
 };

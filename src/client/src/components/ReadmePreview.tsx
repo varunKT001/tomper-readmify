@@ -1,11 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '../redux';
-import ReactMarkdown from 'react-markdown';
-import ChakraUIRenderer from 'chakra-ui-markdown-renderer';
-import { Box, Text, VStack } from '@chakra-ui/react';
-
-const EMOJIS = ['😏', '🐸', '🔫', '🌵'];
+import { marked } from 'marked';
+import DOMPurify from 'dompurify';
+import { Box } from '@chakra-ui/react';
 
 export function ReadmePreview(): JSX.Element {
   const { templateString } = useSelector((store: RootState) => store.template);
@@ -13,39 +11,40 @@ export function ReadmePreview(): JSX.Element {
   const [markdown, setMarkdown] = useState<string>('');
   const [renderError, setRenderError] = useState<any>('');
 
-  useEffect(() => {
+  function handleRender() {
     try {
       const view = {
         fullName: 'Varun Kumar Tiwari',
-        fields: [
-          {
-            emoji: EMOJIS[Math.floor(Math.random() * EMOJIS.length)],
-            name: 'frontend',
-          },
-          {
-            emoji: EMOJIS[Math.floor(Math.random() * EMOJIS.length)],
-            name: 'backend',
-          },
-        ],
+        fields: ['Frontend Developer', 'Backend Developer'],
       };
 
-      const md = window.ejs.render(templateString, view);
+      const md = DOMPurify.sanitize(
+        marked.parse(window.ejs.render(templateString, view))
+      );
+
       setMarkdown(md);
     } catch (error) {
       const err = error as Error;
       const errMessage = err.message as string;
       setRenderError(errMessage);
     }
+  }
+
+  useEffect(() => {
+    handleRender();
   }, [templateString]);
 
   return (
-    <VStack alignItems={'flex-start'} w={'100%'} h={'100%'}>
-      <Text>Preview:</Text>
-      <Box p={2} borderWidth={2} borderRadius={'md'} w={'100%'} h={'100%'}>
-        <ReactMarkdown components={ChakraUIRenderer()}>
-          {markdown ? markdown : renderError}
-        </ReactMarkdown>
-      </Box>
-    </VStack>
+    <Box
+      p={2}
+      borderWidth={2}
+      borderRadius={'md'}
+      w={'100%'}
+      h={'100%'}
+      className='markdown-body'
+      dangerouslySetInnerHTML={{
+        __html: renderError ? renderError : markdown,
+      }}
+    />
   );
 }

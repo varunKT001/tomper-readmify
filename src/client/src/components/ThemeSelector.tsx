@@ -22,7 +22,7 @@ export function ThemeSelector() {
     <Select
       name={'templateName'}
       size={'md'}
-      placeholder={'Select Theme'}
+      value={templateName}
       onChange={handleTemplateChange}
     >
       <option value='simple'>Simple</option>

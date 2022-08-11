@@ -2,6 +2,7 @@ import { Image, Link as ChakraLink, HStack, Flex, Box } from '@chakra-ui/react';
 import { Outlet, Link, useLocation } from 'react-router-dom';
 import logo from '../../assets/logo.svg';
 import { ThemeSelector } from '../../components';
+import { GithubNameModal } from '../../components/GithubNameModal';
 
 export function SharedLayout(): JSX.Element {
   const { pathname } = useLocation();
@@ -19,6 +20,7 @@ export function SharedLayout(): JSX.Element {
               <Image src={logo} boxSize={{ base: '34px', md: '44px' }} />
             </Link>
             {pathname === '/create' && <ThemeSelector />}
+            {pathname === '/create' && <GithubNameModal />}
           </HStack>
           <ChakraLink
             px={{ base: '15px', md: '25px' }}

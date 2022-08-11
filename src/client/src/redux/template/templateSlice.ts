@@ -3,9 +3,10 @@ import { TemplateState, FailedResponse, ChangePayload } from './types';
 import { customFetch } from '../../config/axios';
 import { Toast } from '../../config/toast';
 import { AxiosError } from 'axios';
+import { DEFAULT_TEMPLATE_NAME } from '../../utils/contants';
 
 const initialState = {
-  templateName: 'simple',
+  templateName: DEFAULT_TEMPLATE_NAME,
   templateString: '',
   acceptedFields: [],
 } as TemplateState;
@@ -28,9 +29,9 @@ const templateSlice = createSlice({
   name: 'templateSlice',
   initialState,
   reducers: {
-    change: (state: TemplateState, action: PayloadAction<ChangePayload>) => {
+    change: (state: any, action: PayloadAction<ChangePayload>) => {
       const { name, value } = action.payload;
-      state[name] = value as string & string[];
+      state[name] = value;
     },
   },
   extraReducers: (builder) => {

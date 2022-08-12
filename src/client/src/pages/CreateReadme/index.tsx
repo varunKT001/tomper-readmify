@@ -17,7 +17,7 @@ export function CreateReadme(): JSX.Element {
 
   return (
     <Stack
-      h={'100%'}
+      minH={'100%'}
       mx={'25px'}
       spacing={{ base: 4, md: 10 }}
       direction={{ base: 'column', md: 'row' }}

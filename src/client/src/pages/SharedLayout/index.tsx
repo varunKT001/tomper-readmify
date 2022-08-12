@@ -55,7 +55,13 @@ export function SharedLayout(): JSX.Element {
           </ChakraLink>
         </HStack>
       </Box>
-      <Box w={'100%'} h={'100%'} mb={'25px'}>
+      <Box
+        w={'100%'}
+        h={'100%'}
+        mb={'25px'}
+        overflowY={'auto'}
+        className='thin-scroll-bar'
+      >
         <Outlet />
       </Box>
     </Flex>

@@ -8,6 +8,7 @@ import { DEFAULT_TEMPLATE_NAME } from '../../utils/contants';
 const initialState: TemplateState = {
   templateName: DEFAULT_TEMPLATE_NAME,
   templateString: '',
+  markdown: '',
   acceptedFields: [],
 };
 

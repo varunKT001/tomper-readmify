@@ -1,6 +1,7 @@
 export interface TemplateState {
   templateName: string;
   templateString: string;
+  markdown: string;
   acceptedFields: string[];
 }
 

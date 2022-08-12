@@ -3,10 +3,11 @@
 <p align="center"><% if (typeof fieldsOfWork === 'object') { for(let field of fieldsOfWork) { %><%= typeof field === 'string' && (field.charAt(0).toUpperCase() + field.slice(1)) %> <%= fieldsOfWork.indexOf(field) === fieldsOfWork.length - 1 ? '' : ' | ' %><% } } %></h4>
 </p>
 
+<% if (typeof aboutMe === 'object') { %>
 ## About Me 👦
 
-<% if (typeof aboutMe === 'object') { %>
 <% for (let item of aboutMe) { %> 
 - <%= `${item.emoji} ${item.title.trim()} ${item.link !== '' ? `[${item.name}](${item.link})` : `${item.name}.`}` %> 
-<% } %> 
+<% } %>
+
 <% } %> 

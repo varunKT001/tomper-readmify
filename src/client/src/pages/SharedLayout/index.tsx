@@ -59,7 +59,7 @@ export function SharedLayout(): JSX.Element {
         w={'100%'}
         h={'100%'}
         mb={'25px'}
-        overflowY={'auto'}
+        overflowY={pathname === '/create' ? 'auto' : ''}
         className='thin-scroll-bar'
       >
         <Outlet />

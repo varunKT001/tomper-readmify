@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import {
+  DEFAULT_FIELDS_OF_WORK,
   DEFAULT_FULL_NAME,
   DEFAULT_GITHUB_USERNAME,
 } from '../../utils/contants';
@@ -9,6 +10,7 @@ const initialState: FormState = {
   isGithubUsernameModalOpen: false,
   githubUsername: DEFAULT_GITHUB_USERNAME,
   fullName: DEFAULT_FULL_NAME,
+  fieldsOfWork: DEFAULT_FIELDS_OF_WORK,
 };
 
 const formSlice = createSlice({

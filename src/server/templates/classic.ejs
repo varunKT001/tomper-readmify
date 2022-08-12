@@ -1,4 +1,4 @@
 <p align="center">
 <h1 align="center">👋 Hi, I am <%= typeof fullName === 'string' && fullName %></h1>
-<h4 align="center"><% for(let field of fields) { %><%= typeof field === 'string' && (field.charAt(0).toUpperCase() + field.slice(1)) %> <%= fields.indexOf(field) === fields.length - 1 ? '' : ' | ' %><% } %></h4>
+<h4 align="center"><% if (typeof fieldsOfWork === 'object') { for(let field of fieldsOfWork) { %><%= typeof field === 'string' && (field.charAt(0).toUpperCase() + field.slice(1)) %> <%= fieldsOfWork.indexOf(field) === fieldsOfWork.length - 1 ? '' : ' | ' %><% } } %></h4>
 </p>

@@ -7,6 +7,6 @@ export const templatesInfo: TemplatesInfo = {
     acceptedFields: ['fullName'],
   },
   classic: {
-    acceptedFields: ['fullName', 'fields', 'githubUsername'],
+    acceptedFields: ['fullName', 'fieldsOfWork', 'githubUsername'],
   },
 };

@@ -7,17 +7,13 @@ import { Box } from '@chakra-ui/react';
 
 export function ReadmePreview(): JSX.Element {
   const { templateString } = useSelector((store: RootState) => store.template);
+  const view = useSelector((store: RootState) => store.form);
 
   const [markdown, setMarkdown] = useState<string>('');
   const [renderError, setRenderError] = useState<string>('');
 
   function handleRender() {
     try {
-      const view = {
-        fullName: 'Varun Kumar Tiwari',
-        fields: ['Frontend Developer', 'Backend Developer'],
-      };
-
       const md = DOMPurify.sanitize(
         marked.parse(window.ejs.render(templateString, view))
       );
@@ -32,7 +28,7 @@ export function ReadmePreview(): JSX.Element {
 
   useEffect(() => {
     handleRender();
-  }, [templateString]);
+  }, [templateString, view]);
 
   return (
     <Box

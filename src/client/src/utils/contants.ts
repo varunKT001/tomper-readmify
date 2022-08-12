@@ -113,3 +113,21 @@ export const DEFAULT_ABOUT_ME = [
     link: `tiwarivarun819.vt33.vt@gmail.com`,
   },
 ];
+export const DEFAULT_ACHIEVEMENTS = [
+  {
+    title: `Winner of OpenCode'21, one of the biggest open-source events, organized by GeekHaven, IIITA.`,
+    link: `https://www.linkedin.com/posts/geekhaven-iiita_opencode21-witnessed-extensive-participation-activity-6866010351947825152-KiNB/`,
+  },
+  {
+    title: `Finished in the Top 10 in Out of Context, an event organized by Effervescence, IIITA.`,
+    link: `https://www.linkedin.com/posts/varun-tiwari-454591178_top10-outofcontext-design-activity-6882312778040930304-Fshh`,
+  },
+  {
+    title: `GSSOC'22 Project Admin, with my project Tomper Wear E-commerce.`,
+    link: `https://www.linkedin.com/posts/varun-tiwari-454591178_gssoc22-girlscript-educationfirst-activity-6903552524234686464-bEEL`,
+  },
+  {
+    title: `TomperWear e-commerce awarded as the Best Web App in Winter Projects organized by GDSC and AASF, IIITM, Gwalior.`,
+    link: `https://www.linkedin.com/posts/aasf-iiitmg_github-winterprojects-learning-activity-6909474506340282368-GYq5`,
+  },
+];

@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import {
   DEFAULT_ABOUT_ME,
+  DEFAULT_ACHIEVEMENTS,
   DEFAULT_FIELDS_OF_WORK,
   DEFAULT_FULL_NAME,
   DEFAULT_GITHUB_USERNAME,
@@ -14,6 +15,7 @@ const initialState: FormState = {
   fullName: DEFAULT_FULL_NAME,
   fieldsOfWork: DEFAULT_FIELDS_OF_WORK,
   aboutMe: DEFAULT_ABOUT_ME,
+  achievements: DEFAULT_ACHIEVEMENTS,
 };
 
 const formSlice = createSlice({

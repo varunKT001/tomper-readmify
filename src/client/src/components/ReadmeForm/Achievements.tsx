@@ -11,12 +11,11 @@ import { AiOutlineDelete, AiOutlinePlus } from 'react-icons/ai';
 import { ChangeEvent, MouseEvent } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState, useAppDispatch } from '../../redux';
-import { About, change, ChangePayload } from '../../redux/form';
-import { EMOJIS } from '../../utils/contants';
+import { Achievement, change, ChangePayload } from '../../redux/form';
 
-export function AboutMe(): JSX.Element {
+export function Achievements(): JSX.Element {
   const dispatch = useAppDispatch();
-  const { aboutMe } = useSelector((store: RootState) => store.form);
+  const { achievements } = useSelector((store: RootState) => store.form);
 
   function handleChange(e: ChangeEvent<HTMLInputElement>) {
     const { name, value } = e.target;
@@ -25,10 +24,9 @@ export function AboutMe(): JSX.Element {
   }
 
   function addRow(e: MouseEvent<HTMLButtonElement>) {
-    const emoji = EMOJIS[Math.floor(Math.random() * EMOJIS.length)];
-    const row = { emoji, title: '', name: '', link: '' };
-    const name = 'aboutMe';
-    const value = [...aboutMe, row];
+    const row = { title: '', link: '' };
+    const name = 'achievements';
+    const value = [...achievements, row];
 
     const payload = { name, value } as ChangePayload;
 
@@ -40,8 +38,8 @@ export function AboutMe(): JSX.Element {
       (e.currentTarget as HTMLElement).getAttribute('data-index') as string
     );
 
-    const name = 'aboutMe';
-    const value = aboutMe.filter((_, idx: number) => index !== idx);
+    const name = 'achievements';
+    const value = achievements.filter((_, idx: number) => index !== idx);
 
     const payload = { name, value } as ChangePayload;
 
@@ -50,25 +48,19 @@ export function AboutMe(): JSX.Element {
 
   return (
     <FormControl>
-      <FormLabel>About Me</FormLabel>
+      <FormLabel>Some Achievements</FormLabel>
       <VStack alignItems={'flex-start'} spacing={2}>
-        {aboutMe.map((item: About, index: number) => {
+        {achievements.map((item: Achievement, index: number) => {
           return (
-            <HStack key={index}>
+            <HStack key={index} w={'100%'}>
               <Input
-                name={`aboutMe.${index}.title`}
+                name={`achievements.${index}.title`}
                 placeholder={'Title'}
                 value={item.title}
                 onChange={handleChange}
               />
               <Input
-                name={`aboutMe.${index}.name`}
-                placeholder={'Name'}
-                value={item.name}
-                onChange={handleChange}
-              />
-              <Input
-                name={`aboutMe.${index}.link`}
+                name={`achievements.${index}.link`}
                 placeholder={'link (if any)'}
                 value={item.link}
                 onChange={handleChange}

@@ -11,3 +11,12 @@
 <% } %>
 
 <% } %> 
+
+<% if (typeof achievements === 'object' && achievements.length > 0) { %>
+## Some achievements 🏆
+
+<% for (let item of achievements) { %> 
+- <%= `${item.link !== '' ? `[${item.title}](${item.link})` : `${item.title}.`}` %> 
+<% } %>
+
+<% } %> 

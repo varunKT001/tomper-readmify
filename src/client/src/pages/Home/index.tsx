@@ -1,7 +1,21 @@
+import { useEffect } from 'react';
 import { Box, Container, Heading, Stack, Text, Button } from '@chakra-ui/react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import { reset as resetTemplate } from '../../redux/template';
+import { reset as resetForm } from '../../redux/form';
+import { useAppDispatch } from '../../redux';
 
 export function Home(): JSX.Element {
+  const dispatch = useAppDispatch();
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    if (pathname === '/') {
+      dispatch(resetTemplate());
+      dispatch(resetForm());
+    }
+  }, [pathname]);
+
   return (
     <Container maxW={'4xl'}>
       <Stack

@@ -11,7 +11,6 @@ import { AiFillStar } from 'react-icons/ai';
 import { ThemeSelector } from '../../components';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../redux';
-
 import { GithubNameModal } from '../../components';
 import logo from '../../assets/logo.svg';
 

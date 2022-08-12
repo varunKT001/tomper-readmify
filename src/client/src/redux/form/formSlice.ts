@@ -21,6 +21,9 @@ const formSlice = createSlice({
       const { name, value } = action.payload;
       (state as Record<typeof name, typeof value>)[name] = value;
     },
+    reset: (state: FormState) => {
+      return { ...initialState };
+    },
     openGithubUsernameModal: (state: any) => {
       state.isGithubUsernameModalOpen = true;
     },
@@ -30,6 +33,10 @@ const formSlice = createSlice({
   },
 });
 
-export const { change, openGithubUsernameModal, closeGithubUsernameModal } =
-  formSlice.actions;
+export const {
+  change,
+  reset,
+  openGithubUsernameModal,
+  closeGithubUsernameModal,
+} = formSlice.actions;
 export const formReducer = formSlice.reducer;

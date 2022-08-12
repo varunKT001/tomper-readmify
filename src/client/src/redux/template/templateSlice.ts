@@ -33,6 +33,9 @@ const templateSlice = createSlice({
       const { name, value } = action.payload;
       (state as Record<typeof name, typeof value>)[name] = value;
     },
+    reset: (state: TemplateState) => {
+      return { ...initialState };
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(fetchTemplateInfo.fulfilled, (state, action) => {
@@ -45,5 +48,5 @@ const templateSlice = createSlice({
   },
 });
 
-export const { change } = templateSlice.actions;
+export const { change, reset } = templateSlice.actions;
 export const templateReducer = templateSlice.reducer;

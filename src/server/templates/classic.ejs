@@ -3,7 +3,7 @@
 <p align="center"><% if (typeof fieldsOfWork === 'object') { for(let field of fieldsOfWork) { %><%= typeof field === 'string' && (field.charAt(0).toUpperCase() + field.slice(1)) %> <%= fieldsOfWork.indexOf(field) === fieldsOfWork.length - 1 ? '' : ' | ' %><% } } %></h4>
 </p>
 
-<% if (typeof aboutMe === 'object') { %>
+<% if (typeof aboutMe === 'object' && aboutMe.length > 0) { %>
 ## About Me 👦
 
 <% for (let item of aboutMe) { %> 

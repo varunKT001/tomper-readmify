@@ -11,7 +11,7 @@ import {
   ModalCloseButton,
   ModalFooter,
 } from '@chakra-ui/react';
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, MouseEvent, useState } from 'react';
 import { AiFillGithub } from 'react-icons/ai';
 import { useSelector } from 'react-redux';
 import { RootState, useAppDispatch } from '../redux';
@@ -34,8 +34,11 @@ export function GithubNameModal(): JSX.Element {
     setName(e.target.value);
   }
 
-  function ChangeGithubUsername() {
+  function ChangeGithubUsername(e: MouseEvent<HTMLButtonElement>) {
+    e.preventDefault();
+
     const payload: ChangePayload = { name: 'githubUsername', value: name };
+
     dispatch(change(payload));
     dispatch(onClose());
   }
@@ -55,14 +58,18 @@ export function GithubNameModal(): JSX.Element {
           <ModalHeader>Github Username</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <HStack>
-              <Input
-                value={name}
-                onChange={handleNameChange}
-                placeholder={'Your Github Username'}
-              />
-              <Button onClick={ChangeGithubUsername}>Save</Button>
-            </HStack>
+            <form>
+              <HStack>
+                <Input
+                  value={name}
+                  onChange={handleNameChange}
+                  placeholder={'Your Github Username'}
+                />
+                <Button type={'submit'} onClick={ChangeGithubUsername}>
+                  Save
+                </Button>
+              </HStack>
+            </form>
           </ModalBody>
           <ModalFooter />
         </ModalContent>

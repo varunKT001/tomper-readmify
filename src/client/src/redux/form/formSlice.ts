@@ -1,19 +1,23 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { DEFAULT_GITHUB_USERNAME } from '../../utils/contants';
+import {
+  DEFAULT_FULL_NAME,
+  DEFAULT_GITHUB_USERNAME,
+} from '../../utils/contants';
 import { FormState, ChangePayload } from './types';
 
-const initialState = {
-  githubUsername: DEFAULT_GITHUB_USERNAME,
+const initialState: FormState = {
   isGithubUsernameModalOpen: false,
-} as FormState;
+  githubUsername: DEFAULT_GITHUB_USERNAME,
+  fullName: DEFAULT_FULL_NAME,
+};
 
 const formSlice = createSlice({
   name: 'form',
   initialState,
   reducers: {
-    change: (state: any, action: PayloadAction<ChangePayload>) => {
+    change: (state: FormState, action: PayloadAction<ChangePayload>) => {
       const { name, value } = action.payload;
-      state[name] = value;
+      (state as Record<typeof name, typeof value>)[name] = value;
     },
     openGithubUsernameModal: (state: any) => {
       state.isGithubUsernameModalOpen = true;

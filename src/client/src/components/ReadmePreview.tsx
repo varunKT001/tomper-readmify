@@ -9,7 +9,7 @@ export function ReadmePreview(): JSX.Element {
   const { templateString } = useSelector((store: RootState) => store.template);
 
   const [markdown, setMarkdown] = useState<string>('');
-  const [renderError, setRenderError] = useState<any>('');
+  const [renderError, setRenderError] = useState<string>('');
 
   function handleRender() {
     try {

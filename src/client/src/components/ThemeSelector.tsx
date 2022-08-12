@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { RootState, useAppDispatch } from '../redux';
 import { change, ChangePayload, fetchTemplateInfo } from '../redux/template';
 
-export function ThemeSelector() {
+export function ThemeSelector(): JSX.Element {
   const { templateName } = useSelector((store: RootState) => store.template);
   const dispatch = useAppDispatch();
 

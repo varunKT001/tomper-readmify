@@ -22,7 +22,7 @@ import {
   ChangePayload,
 } from '../redux/form';
 
-export function GithubNameModal() {
+export function GithubNameModal(): JSX.Element {
   const dispatch = useAppDispatch();
   const { githubUsername, isGithubUsernameModalOpen } = useSelector(
     (store: RootState) => store.form
@@ -35,7 +35,7 @@ export function GithubNameModal() {
   }
 
   function ChangeGithubUsername() {
-    const payload = { name: 'githubUsername', value: name } as ChangePayload;
+    const payload: ChangePayload = { name: 'githubUsername', value: name };
     dispatch(change(payload));
     dispatch(onClose());
   }

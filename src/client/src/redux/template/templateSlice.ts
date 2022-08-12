@@ -5,11 +5,11 @@ import { Toast } from '../../config/toast';
 import { AxiosError } from 'axios';
 import { DEFAULT_TEMPLATE_NAME } from '../../utils/contants';
 
-const initialState = {
+const initialState: TemplateState = {
   templateName: DEFAULT_TEMPLATE_NAME,
   templateString: '',
   acceptedFields: [],
-} as TemplateState;
+};
 
 export const fetchTemplateInfo = createAsyncThunk<
   TemplateState,
@@ -29,9 +29,9 @@ const templateSlice = createSlice({
   name: 'templateSlice',
   initialState,
   reducers: {
-    change: (state: any, action: PayloadAction<ChangePayload>) => {
+    change: (state: TemplateState, action: PayloadAction<ChangePayload>) => {
       const { name, value } = action.payload;
-      state[name] = value;
+      (state as Record<typeof name, typeof value>)[name] = value;
     },
   },
   extraReducers: (builder) => {

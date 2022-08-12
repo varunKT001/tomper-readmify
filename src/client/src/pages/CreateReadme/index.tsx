@@ -22,10 +22,18 @@ export function CreateReadme(): JSX.Element {
       spacing={{ base: 4, md: 10 }}
       direction={{ base: 'column', md: 'row' }}
     >
-      <Box w={{ base: '100%', md: '40%' }} h={{ base: '', md: '100%' }}>
+      <Box
+        className='no-scroll-bar'
+        w={{ base: '100%', md: '40%' }}
+        minH={{ base: '', md: '100%' }}
+      >
         <ReadmeForm />
       </Box>
-      <Box w={{ base: '100%', md: '60%' }} h={{ base: '', md: '100%' }}>
+      <Box
+        className='no-scroll-bar'
+        w={{ base: '100%', md: '60%' }}
+        minH={{ base: '', md: '100%' }}
+      >
         <ReadmePreview />
       </Box>
     </Stack>

@@ -36,7 +36,7 @@ export function ReadmePreview(): JSX.Element {
       borderWidth={2}
       borderRadius={'md'}
       w={'100%'}
-      h={'100%'}
+      minH={'100%'}
       className='markdown-body'
       dangerouslySetInnerHTML={{
         __html: renderError ? renderError : markdown,

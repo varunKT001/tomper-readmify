@@ -62,7 +62,11 @@ export function FieldsOfWork() {
         <FormLabel>Fields of Work</FormLabel>
         <Box>
           <HStack>
-            <Input name={'fieldsOfWork'} onChange={handleField} />
+            <Input
+              name={'fieldsOfWork'}
+              placeholder={'Enter your expertise'}
+              onChange={handleField}
+            />
             <Button type={'submit'} onClick={addFieldsOfWork}>
               Add
             </Button>

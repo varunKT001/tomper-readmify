@@ -38,6 +38,7 @@ export function ReadmeForm(): JSX.Element {
           <FormLabel>Full Name</FormLabel>
           <Input
             name={'fullName'}
+            placeholder={'Enter your fullname'}
             value={form.fullName}
             onChange={handleChange}
           />

@@ -1,9 +1,11 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import {
+  DEFAULT_ABOUT_ME,
   DEFAULT_FIELDS_OF_WORK,
   DEFAULT_FULL_NAME,
   DEFAULT_GITHUB_USERNAME,
 } from '../../utils/contants';
+import { set } from '../../utils/utility';
 import { FormState, ChangePayload } from './types';
 
 const initialState: FormState = {
@@ -11,6 +13,7 @@ const initialState: FormState = {
   githubUsername: DEFAULT_GITHUB_USERNAME,
   fullName: DEFAULT_FULL_NAME,
   fieldsOfWork: DEFAULT_FIELDS_OF_WORK,
+  aboutMe: DEFAULT_ABOUT_ME,
 };
 
 const formSlice = createSlice({
@@ -19,7 +22,7 @@ const formSlice = createSlice({
   reducers: {
     change: (state: FormState, action: PayloadAction<ChangePayload>) => {
       const { name, value } = action.payload;
-      (state as Record<typeof name, typeof value>)[name] = value;
+      set(state, name.split('.'), value);
     },
     reset: (state: FormState) => {
       return { ...initialState };

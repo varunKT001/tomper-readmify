@@ -1,28 +1,15 @@
-import {
-  FormControl,
-  FormLabel,
-  Box,
-  VStack,
-  HStack,
-  Input,
-  Button,
-  Tag,
-  TagLabel,
-  TagLeftIcon,
-  TagRightIcon,
-  TagCloseButton,
-  FormHelperText,
-} from '@chakra-ui/react';
+import { FormControl, FormLabel, VStack, Input } from '@chakra-ui/react';
 import {
   change,
   ChangePayload,
   openGithubUsernameModal as onOpen,
 } from '../../redux/form';
-import { MouseEvent, ChangeEvent, useEffect, useState } from 'react';
+import { ChangeEvent, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState, useAppDispatch } from '../../redux';
 import { DEFAULT_GITHUB_USERNAME } from '../../utils/contants';
 import { FieldsOfWork } from './FieldsOfWork';
+import { AboutMe } from './AboutMe';
 
 export function ReadmeForm(): JSX.Element {
   const dispatch = useAppDispatch();
@@ -57,6 +44,7 @@ export function ReadmeForm(): JSX.Element {
         </FormControl>
       )}
       {acceptedFields.includes('fieldsOfWork') && <FieldsOfWork />}
+      {acceptedFields.includes('aboutMe') && <AboutMe />}
     </VStack>
   );
 }

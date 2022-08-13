@@ -26,16 +26,11 @@ export function SharedLayout(): JSX.Element {
           alignItems={'center'}
           justifyContent={'space-between'}
         >
-          <HStack spacing={4}>
-            <Link to='/'>
-              <Box boxSize={{ base: '34px', md: '44px' }}>
-                <Image src={logo} />
-              </Box>
-            </Link>
-            {pathname === '/create' && <ThemeSelector />}
-            {pathname === '/create' &&
-              acceptedFields.includes('githubUsername') && <GithubNameModal />}
-          </HStack>
+          <Link to='/'>
+            <Box boxSize={{ base: '34px', md: '44px' }}>
+              <Image src={logo} />
+            </Box>
+          </Link>
           <ChakraLink
             px={{ base: '15px', md: '25px' }}
             py={{ base: '5px', md: '10px' }}

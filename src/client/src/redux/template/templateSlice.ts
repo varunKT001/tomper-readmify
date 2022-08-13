@@ -6,6 +6,7 @@ import { AxiosError } from 'axios';
 import { DEFAULT_TEMPLATE_NAME } from '../../utils/contants';
 
 const initialState: TemplateState = {
+  loading: false,
   templateName: DEFAULT_TEMPLATE_NAME,
   templateString: '',
   markdown: '',

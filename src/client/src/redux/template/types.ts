@@ -1,4 +1,5 @@
 export interface TemplateState {
+  loading: boolean;
   templateName: string;
   templateString: string;
   markdown: string;

@@ -1,5 +1,11 @@
-import { Stack, Box } from '@chakra-ui/react';
-import { ReadmeForm, ReadmePreview } from '../../components';
+import { Stack, Box, HStack } from '@chakra-ui/react';
+import {
+  CopyMarkdown,
+  GithubNameModal,
+  ReadmeForm,
+  ReadmePreview,
+  ThemeSelector,
+} from '../../components';
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { fetchTemplateInfo, RootState } from '../../redux';
@@ -20,22 +26,36 @@ export function CreateReadme(): JSX.Element {
       minH={'100%'}
       mx={'25px'}
       spacing={{ base: 4, md: 10 }}
-      direction={{ base: 'column', md: 'row' }}
+      direction={'column'}
     >
-      <Box
-        className='no-scroll-bar'
-        w={{ base: '100%', md: '40%' }}
-        minH={{ base: '', md: '100%' }}
+      <HStack mt={2} justifyContent={'space-between'}>
+        <HStack>
+          <ThemeSelector />
+          <GithubNameModal />
+        </HStack>
+        <CopyMarkdown />
+      </HStack>
+      <Stack
+        minH={'100%'}
+        flexGrow={1}
+        spacing={{ base: 4, md: 10 }}
+        direction={{ base: 'column', md: 'row' }}
       >
-        <ReadmeForm />
-      </Box>
-      <Box
-        className='no-scroll-bar'
-        w={{ base: '100%', md: '60%' }}
-        minH={{ base: '', md: '100%' }}
-      >
-        <ReadmePreview />
-      </Box>
+        <Box
+          className='no-scroll-bar'
+          w={{ base: '100%', md: '40%' }}
+          minH={{ base: '', md: '100%' }}
+        >
+          <ReadmeForm />
+        </Box>
+        <Box
+          className='no-scroll-bar'
+          w={{ base: '100%', md: '60%' }}
+          minH={{ base: '', md: '100%' }}
+        >
+          <ReadmePreview />
+        </Box>
+      </Stack>
     </Stack>
   );
 }

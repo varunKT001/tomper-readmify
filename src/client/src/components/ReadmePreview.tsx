@@ -9,8 +9,9 @@ import { debounce } from '../utils/utility';
 
 export function ReadmePreview(): JSX.Element {
   const dispatch = useAppDispatch();
-  const { templateString } = useSelector((store: RootState) => store.template);
-
+  const { templateString, markdown, loading } = useSelector(
+    (store: RootState) => store.template
+  );
   const view = useSelector((store: RootState) => store.form);
 
   const [md, setMd] = useState<string>('');
@@ -19,6 +20,11 @@ export function ReadmePreview(): JSX.Element {
 
   function handleRender() {
     try {
+      if (!loading) {
+        const payload = { name: 'loading', value: true } as ChangePayload;
+        dispatch(change(payload));
+      }
+
       const _md = DOMPurify.sanitize(
         marked.parse(window.ejs.render(templateString, view))
       );
@@ -48,6 +54,13 @@ export function ReadmePreview(): JSX.Element {
     mdRef.current = md;
     updateMarkdown();
   }, [md]);
+
+  useEffect(() => {
+    if (loading) {
+      const payload = { name: 'loading', value: false } as ChangePayload;
+      dispatch(change(payload));
+    }
+  }, [markdown]);
 
   return (
     <Box

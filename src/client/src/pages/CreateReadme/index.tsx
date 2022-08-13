@@ -12,10 +12,10 @@ import { fetchTemplateInfo, RootState } from '../../redux';
 import { useAppDispatch } from '../../redux';
 
 export function CreateReadme(): JSX.Element {
-  const { templateName, templateString } = useSelector(
+  const dispatch = useAppDispatch();
+  const { templateName, templateString, acceptedFields } = useSelector(
     (store: RootState) => store.template
   );
-  const dispatch = useAppDispatch();
 
   useEffect(() => {
     dispatch(fetchTemplateInfo(templateName));
@@ -31,7 +31,7 @@ export function CreateReadme(): JSX.Element {
       <HStack mt={2} justifyContent={'space-between'}>
         <HStack>
           <ThemeSelector />
-          <GithubNameModal />
+          {acceptedFields.includes('githubUsername') && <GithubNameModal />}
         </HStack>
         <CopyMarkdown />
       </HStack>

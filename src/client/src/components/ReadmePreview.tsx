@@ -7,13 +7,18 @@ import { Box } from '@chakra-ui/react';
 import { ChangePayload, change } from '../redux/template';
 import { debounce } from '../utils/utility';
 
+marked.setOptions({
+  gfm: true,
+});
+
 export function ReadmePreview(): JSX.Element {
   const dispatch = useAppDispatch();
+  const view = useSelector((store: RootState) => store.form);
   const { templateString, markdown, loading } = useSelector(
     (store: RootState) => store.template
   );
-  const view = useSelector((store: RootState) => store.form);
 
+  const [html, setHtml] = useState<string>('');
   const [md, setMd] = useState<string>('');
   const [renderError, setRenderError] = useState<string>('');
   const mdRef = useRef(md);
@@ -25,10 +30,10 @@ export function ReadmePreview(): JSX.Element {
         dispatch(change(payload));
       }
 
-      const _md = DOMPurify.sanitize(
-        marked.parse(window.ejs.render(templateString, view))
-      );
+      const _md = window.ejs.render(templateString, view);
+      const _html = DOMPurify.sanitize(marked.parse(_md));
 
+      setHtml(_html);
       setMd(_md);
     } catch (error) {
       const err = error as Error;
@@ -71,7 +76,7 @@ export function ReadmePreview(): JSX.Element {
       minH={'100%'}
       className='markdown-body'
       dangerouslySetInnerHTML={{
-        __html: renderError ? renderError : md,
+        __html: renderError ? renderError : html,
       }}
     />
   );

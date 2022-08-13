@@ -1,9 +1,6 @@
 import { FormControl, FormLabel, VStack, Input } from '@chakra-ui/react';
-import {
-  change,
-  ChangePayload,
-  openGithubUsernameModal as onOpen,
-} from '../../redux/form';
+import { change, ChangePayload } from '../../redux/form';
+import { openGithubUsernameModal as onOpen } from '../../redux/extra';
 import { ChangeEvent, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState, useAppDispatch } from '../../redux';

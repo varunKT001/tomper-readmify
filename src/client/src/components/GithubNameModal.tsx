@@ -15,17 +15,17 @@ import { ChangeEvent, MouseEvent, useState } from 'react';
 import { AiFillGithub } from 'react-icons/ai';
 import { useSelector } from 'react-redux';
 import { RootState, useAppDispatch } from '../redux';
+import { change, ChangePayload } from '../redux/form';
 import {
-  change,
   openGithubUsernameModal as onOpen,
   closeGithubUsernameModal as onClose,
-  ChangePayload,
-} from '../redux/form';
+} from '../redux/extra';
 
 export function GithubNameModal(): JSX.Element {
   const dispatch = useAppDispatch();
-  const { githubUsername, isGithubUsernameModalOpen } = useSelector(
-    (store: RootState) => store.form
+  const { githubUsername } = useSelector((store: RootState) => store.form);
+  const { isGithubUsernameModalOpen } = useSelector(
+    (store: RootState) => store.extra
   );
 
   const [name, setName] = useState<string>(() => githubUsername);

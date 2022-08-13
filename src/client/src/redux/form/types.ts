@@ -4,7 +4,6 @@ export interface FormState {
   fieldsOfWork: string[];
   aboutMe: About[];
   achievements: Achievement[];
-  isGithubUsernameModalOpen: boolean;
 }
 
 export interface ChangePayload {

@@ -10,7 +10,6 @@ import { set } from '../../utils/utility';
 import { FormState, ChangePayload } from './types';
 
 const initialState: FormState = {
-  isGithubUsernameModalOpen: false,
   githubUsername: DEFAULT_GITHUB_USERNAME,
   fullName: DEFAULT_FULL_NAME,
   fieldsOfWork: DEFAULT_FIELDS_OF_WORK,
@@ -29,19 +28,8 @@ const formSlice = createSlice({
     reset: (state: FormState) => {
       return { ...initialState };
     },
-    openGithubUsernameModal: (state: any) => {
-      state.isGithubUsernameModalOpen = true;
-    },
-    closeGithubUsernameModal: (state: any) => {
-      state.isGithubUsernameModalOpen = false;
-    },
   },
 });
 
-export const {
-  change,
-  reset,
-  openGithubUsernameModal,
-  closeGithubUsernameModal,
-} = formSlice.actions;
+export const { change, reset } = formSlice.actions;
 export const formReducer = formSlice.reducer;

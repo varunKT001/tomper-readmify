@@ -4,7 +4,7 @@ export interface TemplatesInfo {
 
 export const templatesInfo: TemplatesInfo = {
   simple: {
-    acceptedFields: ['fullName'],
+    acceptedFields: ['fullName', 'aboutMe'],
   },
   classic: {
     acceptedFields: [

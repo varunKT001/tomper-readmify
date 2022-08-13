@@ -1,1 +1,8 @@
 ## 👋 Hi, I am <%= typeof fullName === 'string' ? fullName : '' %>
+
+<% if (typeof aboutMe === 'object' && aboutMe.length > 0) { %>
+## About Me 👦
+<% for (let item of aboutMe) { %> 
+- <%= `${item.emoji} ${item.title.trim()} ${item.link !== '' ? `[${item.name}](${item.link})` : `${item.name}.`}` -%>
+<% } %>
+<% } %> 

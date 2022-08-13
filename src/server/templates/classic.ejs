@@ -7,7 +7,7 @@
 ## About Me 👦
 
 <% for (let item of aboutMe) { %> 
-- <%= `${item.emoji} ${item.title.trim()} ${item.link !== '' ? `[${item.name}](${item.link})` : `${item.name}.`}` %> 
+- <%= `${item.emoji} ${item.title.trim()} ${item.link !== '' ? `[${item.name}](${item.link})` : `${item.name}.`}` -%>
 <% } %>
 
 <% } %> 
@@ -16,7 +16,7 @@
 ## Some achievements 🏆
 
 <% for (let item of achievements) { %> 
-- <%= `${item.link !== '' ? `[${item.title}](${item.link})` : `${item.title}.`}` %> 
+- <%= `${item.link !== '' ? `[${item.title}](${item.link})` : `${item.title}.`}` -%>
 <% } %>
 
 <% } %>

@@ -33,7 +33,6 @@ export function ReadmePreview(): JSX.Element {
 
   const updateMarkdown = useCallback(
     debounce(function () {
-      console.log('updated');
       const payload = { name: 'markdown', value: md } as ChangePayload;
       dispatch(change(payload));
     }, 1000),

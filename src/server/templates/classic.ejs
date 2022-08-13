@@ -1,6 +1,6 @@
-<p align="center">
-<h1 align="center">👋 Hi, I am <%= typeof fullName === 'string' && fullName %></h2>
-<p align="center"><% if (typeof fieldsOfWork === 'object') { for(let field of fieldsOfWork) { %><%= typeof field === 'string' && (field.charAt(0).toUpperCase() + field.slice(1)) %> <%= fieldsOfWork.indexOf(field) === fieldsOfWork.length - 1 ? '' : ' | ' %><% } } %></h4>
+<p align='center'>
+<h1 align='center'>👋 Hi, I am <%= typeof fullName === 'string' && fullName %></h2>
+<p align='center'><% if (typeof fieldsOfWork === 'object') { for(let field of fieldsOfWork) { %><%= typeof field === 'string' && (field.charAt(0).toUpperCase() + field.slice(1)) %> <%= fieldsOfWork.indexOf(field) === fieldsOfWork.length - 1 ? '' : ' | ' %><% } } %></h4>
 </p>
 
 <% if (typeof aboutMe === 'object' && aboutMe.length > 0) { %>
@@ -19,4 +19,13 @@
 - <%= `${item.link !== '' ? `[${item.title}](${item.link})` : `${item.title}.`}` %> 
 <% } %>
 
-<% } %> 
+<% } %>
+
+<% if (typeof githubUsername === 'string') { %>
+<br/>
+<br/>
+
+---
+
+<p align='center'><%= `Made with 💙 by ${githubUsername}` %></p>
+<% } %>

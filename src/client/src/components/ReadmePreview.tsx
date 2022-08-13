@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState, useAppDispatch } from '../redux';
 import { marked } from 'marked';
@@ -15,6 +15,7 @@ export function ReadmePreview(): JSX.Element {
 
   const [md, setMd] = useState<string>('');
   const [renderError, setRenderError] = useState<string>('');
+  const mdRef = useRef(md);
 
   function handleRender() {
     try {
@@ -23,7 +24,6 @@ export function ReadmePreview(): JSX.Element {
       );
 
       setMd(_md);
-      updateMarkdown();
     } catch (error) {
       const err = error as Error;
       const errMessage = err.message as string;
@@ -33,7 +33,8 @@ export function ReadmePreview(): JSX.Element {
 
   const updateMarkdown = useCallback(
     debounce(function () {
-      const payload = { name: 'markdown', value: md } as ChangePayload;
+      const _md = mdRef.current;
+      const payload = { name: 'markdown', value: _md } as ChangePayload;
       dispatch(change(payload));
     }, 1000),
     []
@@ -42,6 +43,11 @@ export function ReadmePreview(): JSX.Element {
   useEffect(() => {
     handleRender();
   }, [templateString, view]);
+
+  useEffect(() => {
+    mdRef.current = md;
+    updateMarkdown();
+  }, [md]);
 
   return (
     <Box

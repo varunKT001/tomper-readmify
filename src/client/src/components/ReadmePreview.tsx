@@ -1,11 +1,14 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { RootState } from '../redux';
+import { RootState, useAppDispatch } from '../redux';
 import { marked } from 'marked';
 import DOMPurify from 'dompurify';
 import { Box } from '@chakra-ui/react';
+import { ChangePayload, change } from '../redux/template';
+import { debounce } from '../utils/utility';
 
 export function ReadmePreview(): JSX.Element {
+  const dispatch = useAppDispatch();
   const { templateString } = useSelector((store: RootState) => store.template);
 
   const view = useSelector((store: RootState) => store.form);
@@ -20,12 +23,22 @@ export function ReadmePreview(): JSX.Element {
       );
 
       setMd(_md);
+      updateMarkdown();
     } catch (error) {
       const err = error as Error;
       const errMessage = err.message as string;
       setRenderError(errMessage);
     }
   }
+
+  const updateMarkdown = useCallback(
+    debounce(function () {
+      console.log('updated');
+      const payload = { name: 'markdown', value: md } as ChangePayload;
+      dispatch(change(payload));
+    }, 1000),
+    []
+  );
 
   useEffect(() => {
     handleRender();

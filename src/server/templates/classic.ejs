@@ -5,20 +5,16 @@
 
 <% if (typeof aboutMe === 'object' && aboutMe.length > 0) { %>
 ## About Me 👦
-
 <% for (let item of aboutMe) { %> 
 - <%= `${item.emoji} ${item.title.trim()} ${item.link !== '' ? `[${item.name}](${item.link})` : `${item.name}.`}` -%>
 <% } %>
-
 <% } %> 
 
 <% if (typeof achievements === 'object' && achievements.length > 0) { %>
 ## Some achievements 🏆
-
 <% for (let item of achievements) { %> 
 - <%= `${item.link !== '' ? `[${item.title}](${item.link})` : `${item.title}.`}` -%>
 <% } %>
-
 <% } %>
 
 <% if (typeof githubUsername === 'string') { %>

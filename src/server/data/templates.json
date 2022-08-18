@@ -8,7 +8,8 @@
       "fieldsOfWork",
       "aboutMe",
       "achievements",
-      "githubUsername"
+      "githubUsername",
+      "skills"
     ]
   }
 }

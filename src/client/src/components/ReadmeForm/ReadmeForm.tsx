@@ -1,6 +1,9 @@
 import { FormControl, FormLabel, VStack, Input } from '@chakra-ui/react';
 import { change, ChangePayload } from '../../redux/form';
-import { openGithubUsernameModal as onOpen } from '../../redux/extra';
+import {
+  fetchSkillBadges,
+  openGithubUsernameModal as onOpen,
+} from '../../redux/extra';
 import { ChangeEvent, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState, useAppDispatch } from '../../redux';
@@ -26,6 +29,10 @@ export function ReadmeForm(): JSX.Element {
       acceptedFields.includes('githubUsername')
     ) {
       dispatch(onOpen());
+    }
+
+    if (acceptedFields.includes('skills')) {
+      dispatch(fetchSkillBadges('/skill-badges'));
     }
   }, [acceptedFields]);
 

@@ -1,5 +1,5 @@
 import { controller, get } from '@varuntiwari/express-ts-decorators';
-import { templatesInfo } from '../data/templatesInfo';
+import { templatesInfo } from '../data';
 import { Request, Response } from 'express';
 import { promises as fs } from 'fs';
 import path from 'path';

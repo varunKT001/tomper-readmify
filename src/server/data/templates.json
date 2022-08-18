@@ -1,0 +1,14 @@
+{
+  "simple": {
+    "acceptedFields": ["fullName", "aboutMe"]
+  },
+  "classic": {
+    "acceptedFields": [
+      "fullName",
+      "fieldsOfWork",
+      "aboutMe",
+      "achievements",
+      "githubUsername"
+    ]
+  }
+}

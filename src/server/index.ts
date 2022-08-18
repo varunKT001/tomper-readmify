@@ -10,6 +10,7 @@ import path from 'path';
 const app = express();
 
 import './controllers/templateController';
+import './controllers/skillBadgesController';
 
 process.on('uncaughtException', (err: Error) => {
   console.log(`Error: ${err.message}`);

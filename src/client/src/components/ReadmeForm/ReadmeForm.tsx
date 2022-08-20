@@ -1,9 +1,9 @@
-import { FormControl, FormLabel, VStack, Input } from '@chakra-ui/react';
-import { change, ChangePayload } from '../../redux/form';
 import {
   fetchSkillBadges,
   openGithubUsernameModal as onOpen,
 } from '../../redux/extra';
+import { VStack } from '@chakra-ui/react';
+import { change, ChangePayload } from '../../redux/form';
 import { ChangeEvent, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState, useAppDispatch } from '../../redux';
@@ -12,6 +12,7 @@ import { FieldsOfWork } from './FieldsOfWork';
 import { AboutMe } from './AboutMe';
 import { Achievements } from './Achievements';
 import { SkillSelect } from './SkillSelect';
+import { Fullname } from './Fullname';
 
 export function ReadmeForm(): JSX.Element {
   const dispatch = useAppDispatch();
@@ -39,17 +40,7 @@ export function ReadmeForm(): JSX.Element {
 
   return (
     <VStack spacing={6}>
-      {acceptedFields.includes('fullName') && (
-        <FormControl>
-          <FormLabel>Full Name</FormLabel>
-          <Input
-            name={'fullName'}
-            placeholder={'Enter your fullname'}
-            value={form.fullName}
-            onChange={handleChange}
-          />
-        </FormControl>
-      )}
+      {acceptedFields.includes('fullName') && <Fullname />}
       {acceptedFields.includes('fieldsOfWork') && <FieldsOfWork />}
       {acceptedFields.includes('aboutMe') && <AboutMe />}
       {acceptedFields.includes('achievements') && <Achievements />}

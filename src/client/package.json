@@ -15,8 +15,6 @@
     "@emotion/styled": "^11.10.0",
     "@reduxjs/toolkit": "^1.8.3",
     "axios": "^0.27.2",
-    "chakra-ui-autocomplete": "^1.4.5",
-    "chakra-ui-markdown-renderer": "^4.1.0",
     "dompurify": "^2.3.10",
     "framer-motion": "^6.5.1",
     "github-markdown-css": "^5.1.0",

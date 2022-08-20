@@ -131,3 +131,13 @@ export const DEFAULT_ACHIEVEMENTS = [
     link: `https://www.linkedin.com/posts/aasf-iiitmg_github-winterprojects-learning-activity-6909474506340282368-GYq5`,
   },
 ];
+export const DEFAULT_SKILLS = [
+  {
+    skill: 'JavaScript',
+    url: 'https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E',
+  },
+  {
+    skill: 'TypeScript',
+    url: 'https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white',
+  },
+];

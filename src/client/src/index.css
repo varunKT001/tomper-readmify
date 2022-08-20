@@ -15,3 +15,7 @@
 .hero {
   font-family: 'Work Sans', sans-serif;
 }
+
+.markdown-body img {
+  display: inline-block;
+}

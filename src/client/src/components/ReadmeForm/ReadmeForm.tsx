@@ -11,6 +11,7 @@ import { DEFAULT_GITHUB_USERNAME } from '../../utils/contants';
 import { FieldsOfWork } from './FieldsOfWork';
 import { AboutMe } from './AboutMe';
 import { Achievements } from './Achievements';
+import { SkillSelect } from './SkillSelect';
 
 export function ReadmeForm(): JSX.Element {
   const dispatch = useAppDispatch();
@@ -52,6 +53,7 @@ export function ReadmeForm(): JSX.Element {
       {acceptedFields.includes('fieldsOfWork') && <FieldsOfWork />}
       {acceptedFields.includes('aboutMe') && <AboutMe />}
       {acceptedFields.includes('achievements') && <Achievements />}
+      {acceptedFields.includes('skills') && <SkillSelect />}
     </VStack>
   );
 }

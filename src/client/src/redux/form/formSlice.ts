@@ -5,6 +5,7 @@ import {
   DEFAULT_FIELDS_OF_WORK,
   DEFAULT_FULL_NAME,
   DEFAULT_GITHUB_USERNAME,
+  DEFAULT_SKILLS,
 } from '../../utils/contants';
 import { set } from '../../utils/utility';
 import { FormState, ChangePayload } from './types';
@@ -15,6 +16,7 @@ const initialState: FormState = {
   fieldsOfWork: DEFAULT_FIELDS_OF_WORK,
   aboutMe: DEFAULT_ABOUT_ME,
   achievements: DEFAULT_ACHIEVEMENTS,
+  skills: DEFAULT_SKILLS,
 };
 
 const formSlice = createSlice({

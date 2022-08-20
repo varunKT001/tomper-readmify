@@ -17,6 +17,15 @@
 <% } %>
 <% } %>
 
+<% if (typeof skills === 'object' && skills.length > 0) { %>
+## Skills 💪
+<p>
+<% for (let skill of skills) { -%>
+<img width='80px' height='25px' src='<%= skill.url %>' />
+<% } %>
+</p>
+<% } %>
+
 <% if (typeof githubUsername === 'string') { %>
 <br/>
 <br/>

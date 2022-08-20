@@ -4,6 +4,7 @@ export interface FormState {
   fieldsOfWork: string[];
   aboutMe: About[];
   achievements: Achievement[];
+  skills: Skill[];
 }
 
 export interface ChangePayload {
@@ -21,4 +22,9 @@ export interface About {
 export interface Achievement {
   title: string;
   link?: string;
+}
+
+export default interface Skill {
+  skill: string;
+  url: string;
 }

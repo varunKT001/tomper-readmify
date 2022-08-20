@@ -10,10 +10,12 @@
   },
   "dependencies": {
     "@chakra-ui/react": "^2.2.6",
+    "@choc-ui/chakra-autocomplete": "^5.0.0",
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
     "@reduxjs/toolkit": "^1.8.3",
     "axios": "^0.27.2",
+    "chakra-ui-autocomplete": "^1.4.5",
     "chakra-ui-markdown-renderer": "^4.1.0",
     "dompurify": "^2.3.10",
     "framer-motion": "^6.5.1",

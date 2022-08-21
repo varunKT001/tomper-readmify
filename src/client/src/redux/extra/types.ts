@@ -1,7 +1,8 @@
 export interface ExtraState {
   isGithubUsernameModalOpen: boolean;
   skillBadges: SkillBadge[];
-  streaks: Streaks;
+  streaks: ThemesInfo;
+  contributions: ThemesInfo;
 }
 
 export interface ChangePayload {
@@ -14,7 +15,7 @@ export interface SkillBadge {
   url: string;
 }
 
-export interface Streaks {
+export interface ThemesInfo {
   base: string;
   themes: string[];
 }

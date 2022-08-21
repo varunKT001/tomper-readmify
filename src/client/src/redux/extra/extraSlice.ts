@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { ExtraState, SkillBadge, Streaks } from './types';
+import { ExtraState, SkillBadge, ThemesInfo } from './types';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ChangePayload, FailedResponse } from './types';
 import { customFetch } from '../../config/axios';
@@ -8,6 +8,7 @@ import { AxiosError } from 'axios';
 const initialState: ExtraState = {
   skillBadges: [],
   streaks: { base: '', themes: [] },
+  contributions: { base: '', themes: [] },
   isGithubUsernameModalOpen: false,
 };
 
@@ -26,12 +27,26 @@ export const fetchSkillBadges = createAsyncThunk<
 });
 
 export const fetchStreaksInfo = createAsyncThunk<
-  Streaks,
+  ThemesInfo,
   string,
   { rejectValue: FailedResponse }
 >('extra/fetchStreaksInfo', async (_, thunkAPI) => {
   try {
     const res = await customFetch(`/streaks-info`);
+    return res.data;
+  } catch (error) {
+    const err = error as AxiosError<FailedResponse>;
+    return thunkAPI.rejectWithValue(err.response?.data as FailedResponse);
+  }
+});
+
+export const fetchContributionInfo = createAsyncThunk<
+  ThemesInfo,
+  string,
+  { rejectValue: FailedResponse }
+>('extra/fetchContributionInfo', async (_, thunkAPI) => {
+  try {
+    const res = await customFetch(`/contribution-info`);
     return res.data;
   } catch (error) {
     const err = error as AxiosError<FailedResponse>;
@@ -60,6 +75,9 @@ const extraSlice = createSlice({
     });
     builder.addCase(fetchStreaksInfo.fulfilled, (state, action) => {
       state.streaks = action.payload;
+    });
+    builder.addCase(fetchContributionInfo.fulfilled, (state, action) => {
+      state.contributions = action.payload;
     });
   },
 });

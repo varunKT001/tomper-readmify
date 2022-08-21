@@ -1,4 +1,5 @@
 import {
+  fetchContributionInfo,
   fetchSkillBadges,
   fetchStreaksInfo,
   openGithubUsernameModal as onOpen,
@@ -41,6 +42,7 @@ export function ReadmeForm(): JSX.Element {
 
     if (acceptedFields.includes('stats')) {
       dispatch(fetchStreaksInfo('/streaks-info'));
+      dispatch(fetchContributionInfo('/contribution-info'));
     }
   }, [acceptedFields]);
 

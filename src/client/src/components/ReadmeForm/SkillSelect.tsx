@@ -27,7 +27,7 @@ export function SkillSelect() {
     <FormControl>
       <FormLabel>Technical Skills</FormLabel>
       <AutoComplete openOnFocus multiple onChange={handleSelect}>
-        <AutoCompleteInput>
+        <AutoCompleteInput placeholder='Enter your skill'>
           {({ tags }) =>
             tags.map((tag, tid) => (
               <AutoCompleteTag

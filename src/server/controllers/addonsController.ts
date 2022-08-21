@@ -10,7 +10,7 @@ class Addons {
     return res.status(200).json(skillBadges);
   }
 
-  @get('/streaks-themes')
+  @get('/streaks-info')
   async getStreaksThemes(req: Request, res: Response) {
     return res
       .status(200)

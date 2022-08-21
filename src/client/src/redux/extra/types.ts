@@ -1,6 +1,7 @@
 export interface ExtraState {
   isGithubUsernameModalOpen: boolean;
   skillBadges: SkillBadge[];
+  streaks: Streaks;
 }
 
 export interface ChangePayload {
@@ -11,6 +12,11 @@ export interface ChangePayload {
 export interface SkillBadge {
   skill: string;
   url: string;
+}
+
+export interface Streaks {
+  base: string;
+  themes: string[];
 }
 
 export interface FailedResponse {

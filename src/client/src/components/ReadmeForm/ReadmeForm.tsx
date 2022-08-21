@@ -1,5 +1,6 @@
 import {
   fetchSkillBadges,
+  fetchStreaksInfo,
   openGithubUsernameModal as onOpen,
 } from '../../redux/extra';
 import { VStack } from '@chakra-ui/react';
@@ -36,6 +37,10 @@ export function ReadmeForm(): JSX.Element {
 
     if (acceptedFields.includes('skills')) {
       dispatch(fetchSkillBadges('/skill-badges'));
+    }
+
+    if (acceptedFields.includes('stats')) {
+      dispatch(fetchStreaksInfo('/streaks-info'));
     }
   }, [acceptedFields]);
 

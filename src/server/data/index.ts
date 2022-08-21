@@ -14,6 +14,10 @@ export const streaksThemes = JSON.parse(
   readFileSync(path.resolve(__dirname, 'streaksThemes.json')).toString()
 );
 
+export const contributionThemes = JSON.parse(
+  readFileSync(path.resolve(__dirname, 'contributionThemes.json')).toString()
+);
+
 export const skillBadges = JSON.parse(
   readFileSync(path.resolve(__dirname, 'skillBadges.json')).toString()
 ).filter((value: SkillBadge, index: number, self: SkillBadge[]) => {

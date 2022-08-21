@@ -24,6 +24,11 @@ export interface CheckboxPayload {
   value: boolean;
 }
 
+export interface ThemePayload {
+  name: string;
+  value: string;
+}
+
 export interface About {
   title: string;
   emoji: string;

@@ -33,11 +33,11 @@
 <h2 align="center">📊 My Stats</h2>
 
 <% if (stats.options.streaks.show) { %>
-<p align="center"><img align="center" src="https://github-readme-streak-stats-2.herokuapp.com/?user=<%= githubUsername %>" alt="<%= githubUsername %>" /></p>
+<p align="center"><img align="center" src="https://github-readme-streak-stats-2.herokuapp.com/?user=<%= githubUsername %>&theme=<%= stats.options.streaks.theme%> " alt="<%= githubUsername %>" /></p>
 <% } %> 
 
 <% if (stats.options.contributions.show) { %>
-<p align="center"><img align="center" src="https://github-readme-stats.vercel.app/api?username=<%= githubUsername %>&show_icons=true&locale=en" alt="<%= githubUsername %>" /></p>
+<p align="center"><img align="center" src="https://github-readme-stats.vercel.app/api?username=<%= githubUsername %>&theme=<%= stats.options.contributions.theme %>&show_icons=true&locale=en" alt="<%= githubUsername %>" /></p>
 <% } %>
 <% } %>
 

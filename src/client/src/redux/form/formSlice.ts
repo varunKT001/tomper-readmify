@@ -9,7 +9,12 @@ import {
   DEFAULT_STATS,
 } from '../../utils/contants';
 import { set } from '../../utils/utility';
-import { FormState, ChangePayload, CheckboxPayload } from './types';
+import {
+  FormState,
+  ChangePayload,
+  CheckboxPayload,
+  ThemePayload,
+} from './types';
 
 const initialState: FormState = {
   githubUsername: DEFAULT_GITHUB_USERNAME,
@@ -33,11 +38,15 @@ const formSlice = createSlice({
       const { name, value } = action.payload;
       set(state, name.split('.'), value);
     },
+    theme: (state: FormState, action: PayloadAction<ThemePayload>) => {
+      const { name, value } = action.payload;
+      set(state, name.split('.'), value);
+    },
     reset: (state: FormState) => {
       return { ...initialState };
     },
   },
 });
 
-export const { change, checkbox, reset } = formSlice.actions;
+export const { change, checkbox, theme, reset } = formSlice.actions;
 export const formReducer = formSlice.reducer;

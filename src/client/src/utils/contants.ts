@@ -146,11 +146,11 @@ export const DEFAULT_STATS = {
   options: {
     streaks: {
       show: true,
-      theme: '',
+      theme: 'default',
     },
     contributions: {
       show: true,
-      theme: '',
+      theme: 'default',
     },
   },
 };

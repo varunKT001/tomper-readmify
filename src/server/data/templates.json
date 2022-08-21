@@ -9,7 +9,8 @@
       "aboutMe",
       "achievements",
       "githubUsername",
-      "skills"
+      "skills",
+      "stats"
     ]
   }
 }

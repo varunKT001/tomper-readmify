@@ -141,3 +141,16 @@ export const DEFAULT_SKILLS = [
     url: 'https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white',
   },
 ];
+export const DEFAULT_STATS = {
+  show: true,
+  options: {
+    streaks: {
+      show: true,
+      theme: '',
+    },
+    contributions: {
+      show: true,
+      theme: '',
+    },
+  },
+};

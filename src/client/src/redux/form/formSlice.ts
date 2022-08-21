@@ -6,9 +6,10 @@ import {
   DEFAULT_FULL_NAME,
   DEFAULT_GITHUB_USERNAME,
   DEFAULT_SKILLS,
+  DEFAULT_STATS,
 } from '../../utils/contants';
 import { set } from '../../utils/utility';
-import { FormState, ChangePayload } from './types';
+import { FormState, ChangePayload, CheckboxPayload } from './types';
 
 const initialState: FormState = {
   githubUsername: DEFAULT_GITHUB_USERNAME,
@@ -17,6 +18,7 @@ const initialState: FormState = {
   aboutMe: DEFAULT_ABOUT_ME,
   achievements: DEFAULT_ACHIEVEMENTS,
   skills: DEFAULT_SKILLS,
+  stats: DEFAULT_STATS,
 };
 
 const formSlice = createSlice({
@@ -27,11 +29,15 @@ const formSlice = createSlice({
       const { name, value } = action.payload;
       set(state, name.split('.'), value);
     },
+    checkbox: (state: FormState, action: PayloadAction<CheckboxPayload>) => {
+      const { name, value } = action.payload;
+      set(state, name.split('.'), value);
+    },
     reset: (state: FormState) => {
       return { ...initialState };
     },
   },
 });
 
-export const { change, reset } = formSlice.actions;
+export const { change, checkbox, reset } = formSlice.actions;
 export const formReducer = formSlice.reducer;

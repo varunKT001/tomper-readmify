@@ -20,6 +20,7 @@ import {
   theme,
   ThemePayload,
 } from '../../redux/form';
+import { HiOutlinePencilAlt } from 'react-icons/hi';
 import { ChangeEvent } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState, useAppDispatch } from '../../redux';
@@ -59,7 +60,7 @@ export function StreaksCard() {
       >
         Show streaks
       </Checkbox>
-      <Button size={'xs'} onClick={onOpen}>
+      <Button rightIcon={<HiOutlinePencilAlt />} size={'xs'} onClick={onOpen}>
         {stats.options.streaks.theme || 'Select Theme'}
       </Button>
       <Drawer size={'sm'} isOpen={isOpen} placement='left' onClose={onClose}>

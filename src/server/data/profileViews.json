@@ -1,0 +1,16 @@
+{
+  "base": "https://komarev.com/ghpvc",
+  "themes": [
+    "brightgreen",
+    "green",
+    "yellow",
+    "orange",
+    "red",
+    "blue",
+    "grey",
+    "lightgrey",
+    "bluevoilet",
+    "ff69b4"
+  ],
+  "styles": ["flat", "flat-square", "plastic", "for-the-badge"]
+}

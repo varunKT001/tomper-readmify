@@ -1,16 +1,12 @@
 import { controller, get } from '@varuntiwari/express-ts-decorators';
 import {
   contributionThemes,
+  profileViews,
   skillBadges,
   socialIcons,
   streaksThemes,
 } from '../data';
 import { Request, Response } from 'express';
-import {
-  CONTRIBUTION_BASE_URL,
-  SOCIAL_ICONS_BASE_URL,
-  STREAKS_BASE_URL,
-} from '../utils/constants';
 
 @controller('/')
 class Addons {
@@ -21,22 +17,21 @@ class Addons {
 
   @get('/streaks-info')
   async getStreaksThemes(req: Request, res: Response) {
-    return res
-      .status(200)
-      .json({ base: STREAKS_BASE_URL, themes: streaksThemes });
+    return res.status(200).json(streaksThemes);
   }
 
   @get('/contribution-info')
   async getContributionThemes(req: Request, res: Response) {
-    return res
-      .status(200)
-      .json({ base: CONTRIBUTION_BASE_URL, themes: contributionThemes });
+    return res.status(200).json(contributionThemes);
   }
 
   @get('/social-icons')
   async getSocialIcons(req: Request, res: Response) {
-    return res
-      .status(200)
-      .json({ base: SOCIAL_ICONS_BASE_URL, icons: socialIcons });
+    return res.status(200).json(socialIcons);
+  }
+
+  @get('/profile-views')
+  async getProfileViews(req: Request, res: Response) {
+    return res.status(200).json(profileViews);
   }
 }

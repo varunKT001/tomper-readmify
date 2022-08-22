@@ -22,6 +22,10 @@ export const socialIcons = JSON.parse(
   readFileSync(path.resolve(__dirname, 'socialIcons.json')).toString()
 );
 
+export const profileViews = JSON.parse(
+  readFileSync(path.resolve(__dirname, 'profileViews.json')).toString()
+);
+
 export const skillBadges = JSON.parse(
   readFileSync(path.resolve(__dirname, 'skillBadges.json')).toString()
 ).filter((value: SkillBadge, index: number, self: SkillBadge[]) => {

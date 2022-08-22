@@ -32,12 +32,12 @@
 
 <h2 align="center">📊 My Stats</h2>
 
-<% if (stats.options.streaks.show) { %>
-<p align="center"><img align="center" src="https://github-readme-streak-stats-2.herokuapp.com/?user=<%= githubUsername %>&theme=<%= stats.options.streaks.theme%> " alt="<%= githubUsername %>" /></p>
+<% if (stats.github.streaks.show) { %>
+<p align="center"><img align="center" src="https://github-readme-streak-stats-2.herokuapp.com/?user=<%= githubUsername %>&theme=<%= stats.github.streaks.theme%> " alt="<%= githubUsername %>" /></p>
 <% } %> 
 
-<% if (stats.options.contributions.show) { %>
-<p align="center"><img align="center" src="https://github-readme-stats.vercel.app/api?username=<%= githubUsername %>&theme=<%= stats.options.contributions.theme %>&show_icons=true&locale=en" alt="<%= githubUsername %>" /></p>
+<% if (stats.github.contributions.show) { %>
+<p align="center"><img align="center" src="https://github-readme-stats.vercel.app/api?username=<%= githubUsername %>&theme=<%= stats.github.contributions.theme %>&show_icons=true&locale=en" alt="<%= githubUsername %>" /></p>
 <% } %>
 <% } %>
 
@@ -50,7 +50,9 @@
 </p>
 <% } %>
 
-
+<% if (typeof stats.profileViews === 'object' && stats.profileViews.show === true) { %>
+<p align="center"><img src="https://komarev.com/ghpvc/?username=<%= githubUsername %>&color=<%= stats.profileViews.theme %>&style=<%= stats.profileViews.style %>&label=<%= stats.profileViews.label %>" alt="<%= githubUsername %> " /></p>
+<% } %>
 
 <% if (typeof githubUsername === 'string') { %>
 <br/>

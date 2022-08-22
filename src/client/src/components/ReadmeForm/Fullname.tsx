@@ -4,7 +4,7 @@ import { ChangeEvent } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState, useAppDispatch } from '../../redux';
 
-export function Fullname() {
+export function Fullname(): JSX.Element {
   const dispatch = useAppDispatch();
   const form = useSelector((store: RootState) => store.form);
 

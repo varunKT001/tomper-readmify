@@ -25,7 +25,7 @@ import { ChangeEvent } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState, useAppDispatch } from '../../redux';
 
-export function StreaksCard() {
+export function StreaksCard(): JSX.Element {
   const dispatch = useAppDispatch();
   const { streaks } = useSelector((store: RootState) => store.extra);
   const { stats, githubUsername } = useSelector(
@@ -35,7 +35,7 @@ export function StreaksCard() {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   function handleChange(e: ChangeEvent<HTMLInputElement>) {
-    const name = 'stats.options.streaks.show';
+    const name = 'stats.github.streaks.show';
     const value = e.target.checked;
 
     const payload = { name, value } as CheckboxPayload;
@@ -44,7 +44,7 @@ export function StreaksCard() {
   }
 
   function handleTheme(value: string) {
-    const name = 'stats.options.streaks.theme';
+    const name = 'stats.github.streaks.theme';
 
     const payload = { name, value } as ThemePayload;
 
@@ -55,13 +55,13 @@ export function StreaksCard() {
     <HStack>
       <Checkbox
         colorScheme='orange'
-        isChecked={stats.options.streaks.show}
+        isChecked={stats.github.streaks.show}
         onChange={handleChange}
       >
         Show streaks
       </Checkbox>
       <Button rightIcon={<HiOutlinePencilAlt />} size={'xs'} onClick={onOpen}>
-        {stats.options.streaks.theme || 'Select Theme'}
+        {stats.github.streaks.theme || 'Select Theme'}
       </Button>
       <Drawer size={'sm'} isOpen={isOpen} placement='left' onClose={onClose}>
         <DrawerOverlay />
@@ -71,13 +71,14 @@ export function StreaksCard() {
           <DrawerBody>
             <RadioGroup
               colorScheme='orange'
-              value={stats.options.streaks.theme}
+              value={stats.github.streaks.theme}
               onChange={handleTheme}
             >
               <VStack alignItems={'flex-start'}>
-                {streaks.themes.map((theme) => {
+                {streaks.themes.map((theme, index) => {
                   return (
                     <VStack
+                      key={index}
                       p={2}
                       alignItems={'flex-start'}
                       borderWidth={1}

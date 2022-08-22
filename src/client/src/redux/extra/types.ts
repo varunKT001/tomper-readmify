@@ -4,6 +4,13 @@ export interface ExtraState {
   streaks: ThemesInfo;
   contributions: ThemesInfo;
   socialIcons: SocialIcons;
+  profileViews: ProfileViews;
+}
+
+export interface ProfileViews {
+  base: string;
+  themes: string[];
+  styles: string[];
 }
 
 export interface SocialIcons {

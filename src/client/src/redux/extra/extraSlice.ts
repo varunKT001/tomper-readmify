@@ -1,5 +1,11 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { ExtraState, SkillBadge, SocialIcons, ThemesInfo } from './types';
+import {
+  ExtraState,
+  ProfileViews,
+  SkillBadge,
+  SocialIcons,
+  ThemesInfo,
+} from './types';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ChangePayload, FailedResponse } from './types';
 import { customFetch } from '../../config/axios';
@@ -7,6 +13,7 @@ import { AxiosError } from 'axios';
 
 const initialState: ExtraState = {
   skillBadges: [],
+  profileViews: { base: '', themes: [], styles: [] },
   socialIcons: { base: '', icons: {} },
   streaks: { base: '', themes: [] },
   contributions: { base: '', themes: [] },
@@ -69,6 +76,20 @@ export const fetchSocialIcons = createAsyncThunk<
   }
 });
 
+export const fetchProfileViews = createAsyncThunk<
+  ProfileViews,
+  string,
+  { rejectValue: FailedResponse }
+>('extra/fetchProfileViews', async (_, thunkAPI) => {
+  try {
+    const res = await customFetch(`/profile-views`);
+    return res.data;
+  } catch (error) {
+    const err = error as AxiosError<FailedResponse>;
+    return thunkAPI.rejectWithValue(err.response?.data as FailedResponse);
+  }
+});
+
 const extraSlice = createSlice({
   name: 'extra',
   initialState,
@@ -96,6 +117,9 @@ const extraSlice = createSlice({
     });
     builder.addCase(fetchSocialIcons.fulfilled, (state, action) => {
       state.socialIcons = action.payload;
+    });
+    builder.addCase(fetchProfileViews.fulfilled, (state, action) => {
+      state.profileViews = action.payload;
     });
   },
 });

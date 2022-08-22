@@ -1,5 +1,6 @@
 import {
   fetchContributionInfo,
+  fetchProfileViews,
   fetchSkillBadges,
   fetchSocialIcons,
   fetchStreaksInfo,
@@ -24,12 +25,6 @@ export function ReadmeForm(): JSX.Element {
   const form = useSelector((store: RootState) => store.form);
   const { acceptedFields } = useSelector((store: RootState) => store.template);
 
-  function handleChange(e: ChangeEvent<HTMLInputElement>) {
-    const { name, value } = e.target;
-    const payload = { name, value } as ChangePayload;
-    dispatch(change(payload));
-  }
-
   useEffect(() => {
     if (
       form.githubUsername === DEFAULT_GITHUB_USERNAME &&
@@ -45,6 +40,7 @@ export function ReadmeForm(): JSX.Element {
     if (acceptedFields.includes('stats')) {
       dispatch(fetchStreaksInfo('/streaks-info'));
       dispatch(fetchContributionInfo('/contribution-info'));
+      dispatch(fetchProfileViews('/profile-views'));
     }
 
     if (acceptedFields.includes('socials')) {

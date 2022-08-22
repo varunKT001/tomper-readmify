@@ -16,7 +16,7 @@ import { Toast } from '../../config/toast';
 import { useSelector } from 'react-redux';
 import { RootState, useAppDispatch } from '../../redux';
 
-export function FieldsOfWork() {
+export function FieldsOfWork(): JSX.Element {
   const dispatch = useAppDispatch();
   const form = useSelector((store: RootState) => store.form);
 

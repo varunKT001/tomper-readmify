@@ -73,8 +73,12 @@ export function SocialInfo(): JSX.Element {
                 value={item.name}
                 onChange={handleSelect}
               >
-                {Object.keys(socialIcons.icons).map((s) => {
-                  return <option value={s}>{s}</option>;
+                {Object.keys(socialIcons.icons).map((s, _index) => {
+                  return (
+                    <option key={_index} value={s}>
+                      {s}
+                    </option>
+                  );
                 })}
               </Select>
               <Input

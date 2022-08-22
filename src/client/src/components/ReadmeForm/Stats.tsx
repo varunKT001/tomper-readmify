@@ -11,13 +11,14 @@ import { RootState, useAppDispatch } from '../../redux';
 import { StreaksCard } from './StreaksCard';
 import { CheckboxPayload, checkbox } from '../../redux/form';
 import { ContributionsCard } from './ContributionsCard';
+import { ProfileViews } from './ProfileViews';
 
-export function Stats() {
+export function Stats(): JSX.Element {
   const dispatch = useAppDispatch();
   const { stats } = useSelector((store: RootState) => store.form);
 
   function handleChange(e: ChangeEvent<HTMLInputElement>) {
-    const name = 'stats.show';
+    const name = e.target.name;
     const value = e.target.checked;
 
     const payload = { name, value } as CheckboxPayload;
@@ -31,6 +32,7 @@ export function Stats() {
       <VStack alignItems={'flex-start'}>
         <HStack>
           <Checkbox
+            name='stats.show'
             colorScheme='orange'
             isChecked={stats.show}
             onChange={handleChange}
@@ -44,6 +46,7 @@ export function Stats() {
             <ContributionsCard />
           </VStack>
         )}
+        <ProfileViews />
       </VStack>
     </FormControl>
   );

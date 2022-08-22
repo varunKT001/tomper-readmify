@@ -11,7 +11,7 @@ import { RootState, useAppDispatch } from '../../redux';
 import { ChangePayload } from '../../redux/form';
 import { change } from '../../redux/form';
 
-export function SkillSelect() {
+export function SkillSelect(): JSX.Element {
   const dispatch = useAppDispatch();
   const { skillBadges } = useSelector((store: RootState) => store.extra);
   const { skills } = useSelector((store: RootState) => store.form);

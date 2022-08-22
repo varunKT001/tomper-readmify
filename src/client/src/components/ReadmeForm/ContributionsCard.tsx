@@ -25,7 +25,7 @@ import { ChangeEvent } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState, useAppDispatch } from '../../redux';
 
-export function ContributionsCard() {
+export function ContributionsCard(): JSX.Element {
   const dispatch = useAppDispatch();
   const { contributions } = useSelector((store: RootState) => store.extra);
   const { stats, githubUsername } = useSelector(
@@ -35,7 +35,7 @@ export function ContributionsCard() {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   function handleChange(e: ChangeEvent<HTMLInputElement>) {
-    const name = 'stats.options.contributions.show';
+    const name = 'stats.github.contributions.show';
     const value = e.target.checked;
 
     const payload = { name, value } as CheckboxPayload;
@@ -44,7 +44,7 @@ export function ContributionsCard() {
   }
 
   function handleTheme(value: string) {
-    const name = 'stats.options.contributions.theme';
+    const name = 'stats.github.contributions.theme';
 
     const payload = { name, value } as ThemePayload;
 
@@ -55,13 +55,13 @@ export function ContributionsCard() {
     <HStack>
       <Checkbox
         colorScheme='orange'
-        isChecked={stats.options.contributions.show}
+        isChecked={stats.github.contributions.show}
         onChange={handleChange}
       >
         Show contribution stats
       </Checkbox>
       <Button rightIcon={<HiOutlinePencilAlt />} size={'xs'} onClick={onOpen}>
-        {stats.options.contributions.theme || 'Select Theme'}
+        {stats.github.contributions.theme || 'Select Theme'}
       </Button>
       <Drawer size={'sm'} isOpen={isOpen} placement='left' onClose={onClose}>
         <DrawerOverlay />
@@ -71,13 +71,14 @@ export function ContributionsCard() {
           <DrawerBody>
             <RadioGroup
               colorScheme='orange'
-              value={stats.options.contributions.theme}
+              value={stats.github.contributions.theme}
               onChange={handleTheme}
             >
               <VStack alignItems={'flex-start'}>
-                {contributions.themes.map((theme) => {
+                {contributions.themes.map((theme, index) => {
                   return (
                     <VStack
+                      key={index}
                       p={2}
                       alignItems={'flex-start'}
                       borderWidth={1}

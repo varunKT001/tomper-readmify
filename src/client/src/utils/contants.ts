@@ -143,7 +143,13 @@ export const DEFAULT_SKILLS = [
 ];
 export const DEFAULT_STATS = {
   show: true,
-  options: {
+  profileViews: {
+    show: true,
+    theme: 'blue',
+    style: 'flat',
+    label: 'Profile Views',
+  },
+  github: {
     streaks: {
       show: true,
       theme: 'default',

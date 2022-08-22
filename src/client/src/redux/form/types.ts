@@ -8,11 +8,17 @@ export interface FormState {
   socials: Social[];
   stats: {
     show: boolean;
-    options: {
+    profileViews: profileViewsProp;
+    github: {
       streaks: StatsProp;
       contributions: StatsProp;
     };
   };
+}
+
+export interface profileViewsProp extends StatsProp {
+  style: string;
+  label: string;
 }
 
 export interface Social {

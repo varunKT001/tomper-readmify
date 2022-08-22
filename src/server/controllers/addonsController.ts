@@ -6,7 +6,11 @@ import {
   streaksThemes,
 } from '../data';
 import { Request, Response } from 'express';
-import { CONTRIBUTION_BASE_URL, STREAKS_BASE_URL } from '../utils/constants';
+import {
+  CONTRIBUTION_BASE_URL,
+  SOCIAL_ICONS_BASE_URL,
+  STREAKS_BASE_URL,
+} from '../utils/constants';
 
 @controller('/')
 class Addons {
@@ -31,6 +35,8 @@ class Addons {
 
   @get('/social-icons')
   async getSocialIcons(req: Request, res: Response) {
-    return res.status(200).json(socialIcons);
+    return res
+      .status(200)
+      .json({ base: SOCIAL_ICONS_BASE_URL, icons: socialIcons });
   }
 }

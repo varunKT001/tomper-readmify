@@ -27,7 +27,7 @@ export function Stats() {
 
   return (
     <FormControl>
-      <FormLabel>Stats</FormLabel>
+      <FormLabel>Other Stats</FormLabel>
       <VStack alignItems={'flex-start'}>
         <HStack>
           <Checkbox
@@ -35,7 +35,7 @@ export function Stats() {
             isChecked={stats.show}
             onChange={handleChange}
           >
-            Show stats
+            Show Github Stats
           </Checkbox>
         </HStack>
         {stats.show && (

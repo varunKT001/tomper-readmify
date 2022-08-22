@@ -154,3 +154,20 @@ export const DEFAULT_STATS = {
     },
   },
 };
+export const DEFAULT_SOCIALS = [
+  {
+    name: 'linked-in-alt',
+    url: 'https://linkedin.com/in/varun-tiwari-454591178',
+    icon: 'https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg',
+  },
+  {
+    name: 'facebook',
+    url: 'https://www.facebook.com/profile.php?id=100057310502325',
+    icon: 'https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/facebook.svg',
+  },
+  {
+    name: 'instagram',
+    url: 'https://instagram.com/varuntiwari55',
+    icon: 'https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg',
+  },
+];

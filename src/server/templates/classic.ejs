@@ -41,6 +41,17 @@
 <% } %>
 <% } %>
 
+<% if (typeof socials === 'object' && socials.length > 0) { %>
+<h3 align="center">Connect with me:</h3>
+<p align="center">
+<% for (let social of socials) { -%>
+<a href="<%= social.url %>" target="blank"><img align="center" src="<%= social.icon %>" alt="<%= githubUsername %>" height="30px" width="40px" /></a>
+<% } %>
+</p>
+<% } %>
+
+
+
 <% if (typeof githubUsername === 'string') { %>
 <br/>
 <br/>

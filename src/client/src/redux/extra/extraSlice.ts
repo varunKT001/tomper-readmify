@@ -7,7 +7,7 @@ import { AxiosError } from 'axios';
 
 const initialState: ExtraState = {
   skillBadges: [],
-  socialIcons: {},
+  socialIcons: { base: '', icons: {} },
   streaks: { base: '', themes: [] },
   contributions: { base: '', themes: [] },
   isGithubUsernameModalOpen: false,

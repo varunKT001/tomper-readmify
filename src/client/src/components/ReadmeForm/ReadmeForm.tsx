@@ -17,6 +17,7 @@ import { Achievements } from './Achievements';
 import { SkillSelect } from './SkillSelect';
 import { Fullname } from './Fullname';
 import { Stats } from './Stats';
+import { SocialInfo } from './SocialInfo';
 
 export function ReadmeForm(): JSX.Element {
   const dispatch = useAppDispatch();
@@ -58,6 +59,7 @@ export function ReadmeForm(): JSX.Element {
       {acceptedFields.includes('aboutMe') && <AboutMe />}
       {acceptedFields.includes('achievements') && <Achievements />}
       {acceptedFields.includes('skills') && <SkillSelect />}
+      {acceptedFields.includes('socials') && <SocialInfo />}
       {acceptedFields.includes('stats') && <Stats />}
     </VStack>
   );

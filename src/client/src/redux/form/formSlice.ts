@@ -6,6 +6,7 @@ import {
   DEFAULT_FULL_NAME,
   DEFAULT_GITHUB_USERNAME,
   DEFAULT_SKILLS,
+  DEFAULT_SOCIALS,
   DEFAULT_STATS,
 } from '../../utils/contants';
 import { set } from '../../utils/utility';
@@ -24,6 +25,7 @@ const initialState: FormState = {
   achievements: DEFAULT_ACHIEVEMENTS,
   skills: DEFAULT_SKILLS,
   stats: DEFAULT_STATS,
+  socials: DEFAULT_SOCIALS,
 };
 
 const formSlice = createSlice({

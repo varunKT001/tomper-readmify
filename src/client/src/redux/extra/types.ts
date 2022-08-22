@@ -7,7 +7,10 @@ export interface ExtraState {
 }
 
 export interface SocialIcons {
-  [key: string]: string;
+  base: string;
+  icons: {
+    [key: string]: string;
+  };
 }
 
 export interface ChangePayload {

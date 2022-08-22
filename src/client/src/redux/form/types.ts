@@ -5,6 +5,7 @@ export interface FormState {
   aboutMe: About[];
   achievements: Achievement[];
   skills: Skill[];
+  socials: Social[];
   stats: {
     show: boolean;
     options: {
@@ -12,6 +13,12 @@ export interface FormState {
       contributions: StatsProp;
     };
   };
+}
+
+export interface Social {
+  name: string;
+  url: string;
+  icon: string;
 }
 
 export interface ChangePayload {

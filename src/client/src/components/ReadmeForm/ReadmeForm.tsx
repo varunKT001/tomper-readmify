@@ -1,6 +1,7 @@
 import {
   fetchContributionInfo,
   fetchSkillBadges,
+  fetchSocialIcons,
   fetchStreaksInfo,
   openGithubUsernameModal as onOpen,
 } from '../../redux/extra';
@@ -43,6 +44,10 @@ export function ReadmeForm(): JSX.Element {
     if (acceptedFields.includes('stats')) {
       dispatch(fetchStreaksInfo('/streaks-info'));
       dispatch(fetchContributionInfo('/contribution-info'));
+    }
+
+    if (acceptedFields.includes('socials')) {
+      dispatch(fetchSocialIcons('/social-icons'));
     }
   }, [acceptedFields]);
 

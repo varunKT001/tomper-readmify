@@ -10,7 +10,8 @@
       "achievements",
       "githubUsername",
       "skills",
-      "stats"
+      "stats",
+      "socials"
     ]
   }
 }

@@ -1,5 +1,10 @@
 import { controller, get } from '@varuntiwari/express-ts-decorators';
-import { contributionThemes, skillBadges, streaksThemes } from '../data';
+import {
+  contributionThemes,
+  skillBadges,
+  socialIcons,
+  streaksThemes,
+} from '../data';
 import { Request, Response } from 'express';
 import { CONTRIBUTION_BASE_URL, STREAKS_BASE_URL } from '../utils/constants';
 
@@ -22,5 +27,10 @@ class Addons {
     return res
       .status(200)
       .json({ base: CONTRIBUTION_BASE_URL, themes: contributionThemes });
+  }
+
+  @get('/social-icons')
+  async getSocialIcons(req: Request, res: Response) {
+    return res.status(200).json(socialIcons);
   }
 }

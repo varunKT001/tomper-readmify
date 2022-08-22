@@ -3,6 +3,11 @@ export interface ExtraState {
   skillBadges: SkillBadge[];
   streaks: ThemesInfo;
   contributions: ThemesInfo;
+  socialIcons: SocialIcons;
+}
+
+export interface SocialIcons {
+  [key: string]: string;
 }
 
 export interface ChangePayload {

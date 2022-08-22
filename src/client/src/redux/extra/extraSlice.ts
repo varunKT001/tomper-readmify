@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { ExtraState, SkillBadge, ThemesInfo } from './types';
+import { ExtraState, SkillBadge, SocialIcons, ThemesInfo } from './types';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ChangePayload, FailedResponse } from './types';
 import { customFetch } from '../../config/axios';
@@ -7,6 +7,7 @@ import { AxiosError } from 'axios';
 
 const initialState: ExtraState = {
   skillBadges: [],
+  socialIcons: {},
   streaks: { base: '', themes: [] },
   contributions: { base: '', themes: [] },
   isGithubUsernameModalOpen: false,
@@ -54,6 +55,20 @@ export const fetchContributionInfo = createAsyncThunk<
   }
 });
 
+export const fetchSocialIcons = createAsyncThunk<
+  SocialIcons,
+  string,
+  { rejectValue: FailedResponse }
+>('extra/fetchSocialIcons', async (_, thunkAPI) => {
+  try {
+    const res = await customFetch(`/social-icons`);
+    return res.data;
+  } catch (error) {
+    const err = error as AxiosError<FailedResponse>;
+    return thunkAPI.rejectWithValue(err.response?.data as FailedResponse);
+  }
+});
+
 const extraSlice = createSlice({
   name: 'extra',
   initialState,
@@ -78,6 +93,9 @@ const extraSlice = createSlice({
     });
     builder.addCase(fetchContributionInfo.fulfilled, (state, action) => {
       state.contributions = action.payload;
+    });
+    builder.addCase(fetchSocialIcons.fulfilled, (state, action) => {
+      state.socialIcons = action.payload;
     });
   },
 });

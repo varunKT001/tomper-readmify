@@ -30,21 +30,20 @@ export function SocialInfo(): JSX.Element {
     const payload = { name, value } as ChangePayload;
     dispatch(change(payload));
 
-    const index = e.target.dataset['index'];
-    const _name = `socials.${index}.icon`;
-    const _value = `${socialIcons.base}/${value}.svg`;
-    const _payload = { name: _name, value: _value } as ChangePayload;
-    dispatch(change(_payload));
+    const index = parseInt(e.target.dataset['index']!);
+    addIcon(index, value);
   }
 
   function addRow(e: MouseEvent<HTMLButtonElement>) {
-    const row = { name: '', url: '' };
+    const row = { name: 'whatsapp', url: '' };
     const name = 'socials';
     const value = [...socials, row];
 
     const payload = { name, value } as ChangePayload;
 
     dispatch(change(payload));
+
+    addIcon(socials.length, row.name);
   }
 
   function deleteRow(e: MouseEvent<HTMLButtonElement>) {
@@ -58,6 +57,15 @@ export function SocialInfo(): JSX.Element {
     const payload = { name, value } as ChangePayload;
 
     dispatch(change(payload));
+  }
+
+  function addIcon(index: number, value: string) {
+    const _name = `socials.${index}.icon`;
+    const _value = `${socialIcons.base}/${value}.svg`;
+
+    const _payload = { name: _name, value: _value } as ChangePayload;
+
+    dispatch(change(_payload));
   }
 
   return (

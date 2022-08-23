@@ -19,3 +19,15 @@
 .markdown-body img {
   display: inline-block;
 }
+
+.star svg {
+  width: 25px;
+  height: 25px;
+  color: var(--chakra-colors-yellow-500);
+}
+
+.success-icon svg {
+  width: 25px;
+  height: 25px;
+  color: var(--chakra-colors-green-500);
+}

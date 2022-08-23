@@ -1,3 +1,5 @@
+export const GITHUB_URL =
+  'https://github.com/varunKT001/tomper-readme-generator';
 export const DEFAULT_GITHUB_USERNAME = 'varunKT001';
 export const DEFAULT_TEMPLATE_NAME = 'simple';
 export const DEFAULT_FULL_NAME = 'Varun Kumar Tiwari';

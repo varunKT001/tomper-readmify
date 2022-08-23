@@ -1,5 +1,6 @@
 export interface ExtraState {
   isGithubUsernameModalOpen: boolean;
+  isReviewModalOpen: boolean;
   skillBadges: SkillBadge[];
   streaks: ThemesInfo;
   contributions: ThemesInfo;

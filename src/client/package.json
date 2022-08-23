@@ -13,6 +13,8 @@
     "@choc-ui/chakra-autocomplete": "^5.0.0",
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
+    "@formspree/core": "^2.7.1",
+    "@formspree/react": "^2.3.1",
     "@reduxjs/toolkit": "^1.8.3",
     "axios": "^0.27.2",
     "dompurify": "^2.3.10",

@@ -8,10 +8,10 @@ import {
 } from '@chakra-ui/react';
 import { Outlet, Link, useLocation } from 'react-router-dom';
 import { AiFillStar } from 'react-icons/ai';
-import { ThemeSelector } from '../../components';
+import { ReviewModal } from '../../components';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../redux';
-import { GithubNameModal } from '../../components';
+import { GITHUB_URL } from '../../utils/contants';
 import logo from '../../assets/logo.svg';
 
 export function SharedLayout(): JSX.Element {
@@ -31,23 +31,26 @@ export function SharedLayout(): JSX.Element {
               <Image src={logo} />
             </Box>
           </Link>
-          <ChakraLink
-            px={{ base: '15px', md: '25px' }}
-            py={{ base: '5px', md: '10px' }}
-            fontSize={{ base: 'sm', md: 'md' }}
-            display={'flex'}
-            flexDir={'row'}
-            alignItems={'center'}
-            justifyContent={'center'}
-            borderRadius={'md'}
-            color={'white'}
-            bgColor={'black'}
-            isExternal
-            href='https://github.com/varunKT001/tomper-readme-generator'
-          >
-            <AiFillStar />
-            <Text ml={2}>Github</Text>
-          </ChakraLink>
+          <HStack>
+            <ReviewModal />
+            <ChakraLink
+              px={{ base: '10px', md: '15px' }}
+              py={{ base: '5px', md: '7px' }}
+              fontSize={{ base: 'sm', md: 'md' }}
+              display={'flex'}
+              flexDir={'row'}
+              alignItems={'center'}
+              justifyContent={'center'}
+              borderRadius={'md'}
+              color={'white'}
+              bgColor={'black'}
+              isExternal
+              href={GITHUB_URL}
+            >
+              <AiFillStar />
+              <Text ml={2}>Github</Text>
+            </ChakraLink>
+          </HStack>
         </HStack>
       </Box>
       <Box

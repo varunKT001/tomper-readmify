@@ -18,6 +18,7 @@ const initialState: ExtraState = {
   streaks: { base: '', themes: [] },
   contributions: { base: '', themes: [] },
   isGithubUsernameModalOpen: false,
+  isReviewModalOpen: false,
 };
 
 export const fetchSkillBadges = createAsyncThunk<
@@ -104,6 +105,12 @@ const extraSlice = createSlice({
     closeGithubUsernameModal: (state: ExtraState) => {
       state.isGithubUsernameModalOpen = false;
     },
+    openReviewModal: (state: ExtraState) => {
+      state.isReviewModalOpen = true;
+    },
+    closeReviewModal: (state: ExtraState) => {
+      state.isReviewModalOpen = false;
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(fetchSkillBadges.fulfilled, (state, action) => {
@@ -124,6 +131,10 @@ const extraSlice = createSlice({
   },
 });
 
-export const { openGithubUsernameModal, closeGithubUsernameModal } =
-  extraSlice.actions;
+export const {
+  openGithubUsernameModal,
+  closeGithubUsernameModal,
+  openReviewModal,
+  closeReviewModal,
+} = extraSlice.actions;
 export const extraReducer = extraSlice.reducer;

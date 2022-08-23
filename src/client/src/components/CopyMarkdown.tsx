@@ -1,9 +1,11 @@
 import { Button } from '@chakra-ui/react';
 import { Toast } from '../config/toast';
 import { useSelector } from 'react-redux';
-import { RootState } from '../redux';
+import { RootState, useAppDispatch } from '../redux';
+import { openReviewModal } from '../redux/extra';
 
 export function CopyMarkdown() {
+  const dispatch = useAppDispatch();
   const { markdown, loading } = useSelector(
     (store: RootState) => store.template
   );
@@ -11,7 +13,12 @@ export function CopyMarkdown() {
   function handleCopy() {
     try {
       navigator.clipboard.writeText(markdown);
+
       Toast.success('Markdown copied to clipboard');
+
+      setTimeout(() => {
+        dispatch(openReviewModal());
+      }, 2000);
     } catch (error) {
       const err = error as Error;
       Toast.error(err.message);

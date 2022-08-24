@@ -33,7 +33,7 @@ export function Home(): JSX.Element {
       h={'100%'}
       alignItems={'center'}
       spacing={0}
-      pt={{ base: 20, md: 32 }}
+      pt={{ base: 20, md: 20 }}
     >
       <Stack
         as={Box}
@@ -41,7 +41,7 @@ export function Home(): JSX.Element {
         m={0}
         p={0}
         alignItems={'center'}
-        spacing={{ base: 8, md: 12 }}
+        spacing={{ base: 8, md: 24 }}
       >
         <Container
           maxW={'4xl'}
@@ -84,7 +84,7 @@ export function Home(): JSX.Element {
           </Button>
         </Container>
         <Box w={'100%'} height={'100%'} position={'relative'}>
-          <Container maxW={'4xl'}>
+          <Container maxW={'6xl'}>
             <Image src={bannerHero} boxShadow='2xl' rounded={4} />
           </Container>
           <Box

@@ -19,7 +19,7 @@ This is the frontend + backend of TomperReadmify build with MERN stack and deplo
 <img src='./src/client/src/assets/banner-hero.gif'>
 </p>
 
-## 🚀 Visit [TomperReadmify](https://github.com/varunKT001/tomper-wear-ecommerce-admin)
+## 🚀 Visit [TomperReadmify](https://tomper-readmify.herokuapp.com/)
 
 ## 🧾 Description
 

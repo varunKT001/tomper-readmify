@@ -33,7 +33,6 @@ Users creating their profile's README through this platform enjoys following fea
 - [x] No markdown knowledge is required.
 - [x] Various themes to suit every user's need.
 - [x] Addons like Github Streaks, Github Stats, Profile Views, etc., each with a variety of themes.
-
 - [x] Feedback can be provided by users.
 - [x] Responsive for all screen sizes.
 

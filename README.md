@@ -23,7 +23,7 @@ This is the frontend + backend of TomperReadmify build with MERN stack and deplo
 
 ## 🧾 Description
 
-This simple editor allows you to quickly add and customize all the sections you need for your profile's readme.
+A simple editor allows you to easily add and customize all the sections you need for your profile's readme.
 
 ## ✨ Features
 

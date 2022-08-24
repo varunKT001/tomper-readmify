@@ -23,7 +23,7 @@ This is the frontend + backend of TomperReadmify build with MERN stack and deplo
 
 ## 🧾 Description
 
-Our simple editor allows you to quickly add and customize all the sections you need for your profile's readme
+This simple editor allows you to quickly add and customize all the sections you need for your profile's readme.
 
 ## ✨ Features
 
@@ -32,7 +32,8 @@ Users creating their profile's README through this platform enjoys following fea
 - [x] Easy to interface.
 - [x] No markdown knowledge is required.
 - [x] Various themes to suit every user's need.
-- [x] A variety of addons, such as Github Streaks, Github Stats, Profile Views, etc., each with a ton of themes to choose from.
+- [x] Addons like Github Streaks, Github Stats, Profile Views, etc., each with a variety of themes.
+
 - [x] Feedback can be provided by users.
 - [x] Responsive for all screen sizes.
 

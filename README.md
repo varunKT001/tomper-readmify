@@ -41,18 +41,20 @@ Users creating their profile's README through this platform enjoys following fea
 #### Client
 
 1. [React.js](https://reactjs.org/)
-2. [Redux-Toolkit](https://redux-toolkit.js.org/)
-3. [Chakra-UI](https://chakra-ui.com/)
-4. [Marked](https://marked.js.org/)
-5. [DOMPurify](https://www.npmjs.com/package/dompurify)
-6. [React-icons](https://react-icons.github.io/react-icons/)
-7. [Formspree](https://formspree.io/)
+2. [Typescript](https://www.typescriptlang.org/)
+3. [Redux-Toolkit](https://redux-toolkit.js.org/)
+4. [Chakra-UI](https://chakra-ui.com/)
+5. [Marked](https://marked.js.org/)
+6. [DOMPurify](https://www.npmjs.com/package/dompurify)
+7. [React-icons](https://react-icons.github.io/react-icons/)
+8. [Formspree](https://formspree.io/)
 
 #### Backend
 
 1. [Node.js](https://nodejs.org/en/)
 2. [Express.js](https://expressjs.com/)
-3. [@varuntiwari/express-ts-decorators](https://www.npmjs.com/package/@varuntiwari/express-ts-decorators)
+3. [Typescript](https://www.typescriptlang.org/)
+4. [@varuntiwari/express-ts-decorators](https://www.npmjs.com/package/@varuntiwari/express-ts-decorators)
 
 ## 🛠 Installation and setup
 

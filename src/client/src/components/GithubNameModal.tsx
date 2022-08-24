@@ -49,6 +49,7 @@ export function GithubNameModal(): JSX.Element {
         {`/${githubUsername}`}
       </Button>
       <Modal
+        size={'xs'}
         blockScrollOnMount={false}
         isOpen={isGithubUsernameModalOpen}
         onClose={() => dispatch(onClose())}

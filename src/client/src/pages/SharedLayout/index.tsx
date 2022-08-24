@@ -56,7 +56,7 @@ export function SharedLayout(): JSX.Element {
       <Box
         w={'100%'}
         h={'100%'}
-        mb={'25px'}
+        mb={pathname === '/create' ? '25px' : '0'}
         overflowY={pathname === '/create' ? 'auto' : 'visible'}
       >
         <Outlet />

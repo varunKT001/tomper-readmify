@@ -6,13 +6,13 @@
 using the best Templates</b>
 </p>
 <p align='center'>
-<a href='https://tomper-readmify.herokuapp.com/' target='_blank'>tomper-readmify.herokuapp.com</a>
+<a href='https://tomper-readmify.onrender.com/' target='_blank'>tomper-readmify.onrender.com</a>
 </p>
 
 ---
 
 <p align='center'>
-This is the frontend + backend of TomperReadmify build with MERN stack and deployed with <a href='https://www.heroku.com/' target='_blank'>Heroku</a>
+This is the frontend + backend of TomperReadmify build with MERN stack and deployed with <a href='https://render.com/' target='_blank'>Render</a>
 </p>
 
 <p align='center'>

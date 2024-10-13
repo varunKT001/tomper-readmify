@@ -1,5 +1,5 @@
 {
-  "base": "https://streak-stats.demolab.com",
+  "base": "https://github-readme-stats.vercel.app/api",
   "themes": [
     "default",
     "default_repocard",

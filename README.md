@@ -6,7 +6,9 @@
 using the best Templates</b>
 </p>
 <p align='center'>
-<a href='https://tomper-readmify.onrender.com/' target='_blank'>tomper-readmify.onrender.com</a>
+<a href='https://tomper-readmify.onrender.com/' target='_blank'>tomper-readmify.onrender.com</a> (cloud-based)
+<br/>
+<a href='https://tr.varuntiwari.com' target='_blank'>tr.varuntiwari.com</a> (self-hosted)
 </p>
 
 ---
